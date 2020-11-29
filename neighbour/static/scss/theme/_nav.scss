@@ -1,0 +1,27 @@
+//
+// nav.scss
+//
+
+.nav-tabs .nav-link {
+  padding: 0 $nav-tabs-link-padding-x $nav-tabs-link-padding-bottom;
+  border-width: 0 0 $nav-tabs-border-width 0;
+}
+
+.nav-tabs .nav-item + .nav-item {
+  margin-left: $nav-tabs-item-spacer;
+}
+
+
+// Dark
+
+.nav-dark .nav-link {
+  color: $nav-link-color-dark;
+}
+
+.nav-dark .nav-link:hover {
+  color: $nav-link-hover-color-dark;
+}
+
+.nav-dark .nav-link.active {
+  color: $nav-link-active-color-dark;
+}

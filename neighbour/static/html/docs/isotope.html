@@ -1,0 +1,307 @@
+<!doctype html>
+<html>
+  <head>
+    @@include("@@webRoot/partials/head.html", {
+    "pageTitle": "Goodkit"
+    })
+  </head>
+  <body class="docs-body">
+
+    <!-- MODALS -->
+    @@include("@@webRoot/partials/modals.html")
+
+    <!-- NAVBAR -->
+    @@include("@@webRoot/partials/navbar.html", {
+    "classList": "navbar-light fixed-top bg-white border-bottom"
+    })
+
+    <!-- BREADCRUMB -->
+    @@include("@@webRoot/partials/docs/breadcrumb.html", {
+    "title": "Isotope"
+    })
+
+    <!-- CONTENT -->
+    <section>
+      <div class="container-fluid">
+        <div class="row align-items-start">
+          <div class="col-lg-3 col-xl-2 docs-sidenav docs-sidenav-left">
+
+            @@include("@@webRoot/partials/docs/nav.html")
+
+          </div>
+          <div class="col-lg-9 col-xl-8 offset-lg-3 offset-xl-2 py-6 py-md-9 px-lg-10">
+
+            @@include("@@webRoot/partials/docs/header.html", {
+            "title": "Isotope",
+            "isCustom": true,
+            "description": "Filter & sort magical layouts.",
+            "bootstrapDocs": "",
+            "pluginDocs": "https://isotope.metafizzy.co/"
+            })
+
+            @@include("@@webRoot/partials/docs/subheader.html", {
+            "title": "",
+            "id": "id",
+            "isCustom": false,
+            "description": ""
+            })
+
+            <!-- Card -->
+            <div class="card card-sm docs-card">
+              <div class="card-body">
+
+                <!-- Nav -->
+                <ul class="nav nav-tabs nav-overflow mb-6" id="teamTab" role="tablist">
+                  <li class="nav-item" role="presentation">
+                    <a class="nav-link active" data-toggle="tab" data-filter=".founders" data-target="#team" href="#">
+                      Founders
+                    </a>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <a class="nav-link" data-toggle="tab" data-filter=".board" data-target="#team" href="#">
+                      Board
+                    </a>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <a class="nav-link" data-toggle="tab" data-filter=".investors" data-target="#team" href="#">
+                      Investors
+                    </a>
+                  </li>
+                </ul>
+
+                <div class="row mt-n5" id="team" data-isotope='{"layoutMode": "fitRows", "imagesLoaded": true}'>
+                  <div class="col-6 col-md-3 founders investors">
+
+                    <!-- Card -->
+                    <div class="card card-sm bg-transparent mt-5">
+
+                      <!-- Image -->
+                      <img class="card-img-top rounded-top-left rounded-bottom-right" src="@@webRoot/assets/img/avatars/avatar-1.jpg" alt="...">
+
+                      <!-- Body -->
+                      <div class="card-body px-0 text-center">
+
+                        <!-- Heading -->
+                        <h5 class="font-family-sans-serif mb-0">
+                          Liddy Buchanan
+                        </h5>
+
+                        <!-- Text -->
+                        <small class="text-muted">
+                          Chief Design Officer
+                        </small>
+
+                      </div>
+
+                    </div>
+
+                  </div>
+                  <div class="col-6 col-md-3 founders board">
+
+                    <!-- Card -->
+                    <div class="card card-sm bg-transparent mt-5">
+
+                      <!-- Image -->
+                      <img class="card-img-top rounded-top-left rounded-bottom-right" src="@@webRoot/assets/img/avatars/avatar-2.jpg" alt="...">
+
+                      <!-- Body -->
+                      <div class="card-body px-0 text-center">
+
+                        <!-- Heading -->
+                        <h5 class="font-family-sans-serif mb-0">
+                          Richard Simpson
+                        </h5>
+
+                        <!-- Text -->
+                        <small class="text-muted">
+                          VP of Engineering
+                        </small>
+
+                      </div>
+
+                    </div>
+
+                  </div>
+                  <div class="col-6 col-md-3 founders investors">
+
+                    <!-- Card -->
+                    <div class="card card-sm bg-transparent mt-5">
+
+                      <!-- Image -->
+                      <img class="card-img-top rounded-top-left rounded-bottom-right" src="@@webRoot/assets/img/avatars/avatar-3.jpg" alt="...">
+
+                      <!-- Body -->
+                      <div class="card-body px-0 text-center">
+
+                        <!-- Heading -->
+                        <h5 class="font-family-sans-serif mb-0">
+                          Brooke Fyfe
+                        </h5>
+
+                        <!-- Text -->
+                        <small class="text-muted">
+                          Human Resources
+                        </small>
+
+                      </div>
+
+                    </div>
+
+                  </div>
+                  <div class="col-6 col-md-3 founders board">
+
+                    <!-- Card -->
+                    <div class="card card-sm bg-transparent mt-5">
+
+                      <!-- Image -->
+                      <img class="card-img-top rounded-top-left rounded-bottom-right" src="@@webRoot/assets/img/avatars/avatar-4.jpg" alt="...">
+
+                      <!-- Body -->
+                      <div class="card-body px-0 text-center">
+
+                        <!-- Heading -->
+                        <h5 class="font-family-sans-serif mb-0">
+                          Jenny Haleen
+                        </h5>
+
+                        <!-- Text -->
+                        <small class="text-muted">
+                          Head of Product
+                        </small>
+
+                      </div>
+
+                    </div>
+
+                  </div>
+                  <div class="col-6 col-md-3 founders investors">
+
+                    <!-- Card -->
+                    <div class="card card-sm bg-transparent mt-5">
+
+                      <!-- Image -->
+                      <img class="card-img-top rounded-top-left rounded-bottom-right" src="@@webRoot/assets/img/avatars/avatar-5.jpg" alt="...">
+
+                      <!-- Body -->
+                      <div class="card-body px-0 text-center">
+
+                        <!-- Heading -->
+                        <h5 class="font-family-sans-serif mb-0">
+                          Shannon O'Connor
+                        </h5>
+
+                        <!-- Text -->
+                        <small class="text-muted">
+                          President of Sales
+                        </small>
+
+                      </div>
+
+                    </div>
+
+                  </div>
+                  <div class="col-6 col-md-3 founders board">
+
+                    <!-- Card -->
+                    <div class="card card-sm bg-transparent mt-5">
+
+                      <!-- Image -->
+                      <img class="card-img-top rounded-top-left rounded-bottom-right" src="@@webRoot/assets/img/avatars/avatar-6.jpg" alt="...">
+
+                      <!-- Body -->
+                      <div class="card-body px-0 text-center">
+
+                        <!-- Heading -->
+                        <h5 class="font-family-sans-serif mb-0">
+                          Kevin Qwestlove
+                        </h5>
+
+                        <!-- Text -->
+                        <small class="text-muted">
+                          Employee Resources
+                        </small>
+
+                      </div>
+
+                    </div>
+
+                  </div>
+                  <div class="col-6 col-md-3 founders investors">
+
+                    <!-- Card -->
+                    <div class="card card-sm bg-transparent mt-5">
+
+                      <!-- Image -->
+                      <img class="card-img-top rounded-top-left rounded-bottom-right" src="@@webRoot/assets/img/avatars/avatar-7.jpg" alt="...">
+
+                      <!-- Body -->
+                      <div class="card-body px-0 text-center">
+
+                        <!-- Heading -->
+                        <h5 class="font-family-sans-serif mb-0">
+                          Chrissy Polachek
+                        </h5>
+
+                        <!-- Text -->
+                        <small class="text-muted">
+                          VP of Logistics
+                        </small>
+
+                      </div>
+
+                    </div>
+
+                  </div>
+                  <div class="col-6 col-md-3 founders board">
+
+                    <!-- Card -->
+                    <div class="card card-sm bg-transparent mt-5">
+
+                      <!-- Image -->
+                      <img class="card-img-top rounded-top-left rounded-bottom-right" src="@@webRoot/assets/img/avatars/avatar-8.jpg" alt="...">
+
+                      <!-- Body -->
+                      <div class="card-body px-0 text-center">
+
+                        <!-- Heading -->
+                        <h5 class="font-family-sans-serif mb-0">
+                          Liddy Buchanan
+                        </h5>
+
+                        <!-- Text -->
+                        <small class="text-muted">
+                          Chief Design Officer
+                        </small>
+
+                      </div>
+
+                    </div>
+
+                  </div>
+                </div>
+
+              </div>
+              <div class="card-footer">
+                <code class="html highlight">
+                  &lt;a&nbsp;data-toggle=&quot;tab&quot;&nbsp;data-target=&quot;#team&quot;&nbsp;data-filter=&quot;.founders&quot;&nbsp;href=&quot;#&quot;&gt;<br />&nbsp;&nbsp;Founders<br />&lt;/a&gt;<br /><br />&lt;div&nbsp;id=&quot;team&quot;&nbsp;data-isotope='{&quot;layoutMode&quot;:&nbsp;&quot;masonry&quot;}'&gt;<br />&nbsp;&nbsp;&lt;div&nbsp;class=&quot;founders&quot;&gt;...&lt;/div&gt;<br />&nbsp;&nbsp;...<br />&lt;/div&gt;<br />
+                </code>
+              </div>
+            </div>
+
+          </div>
+          <div class="col-lg-3 col-xl-2 d-none d-xl-block docs-sidenav docs-sidenav-right">
+
+            @@include("@@webRoot/partials/docs/subnav.html", {
+            "items": []
+            })
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- JAVASCRIPT -->
+    @@include("@@webRoot/partials/scripts.html")
+
+  </body>
+</html>

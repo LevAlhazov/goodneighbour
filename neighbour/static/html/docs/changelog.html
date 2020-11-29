@@ -1,0 +1,180 @@
+<!doctype html>
+<html>
+  <head>
+    @@include("@@webRoot/partials/head.html", {
+    "pageTitle": "Goodkit"
+    })
+  </head>
+  <body class="docs-body">
+
+    <!-- MODALS -->
+    @@include("@@webRoot/partials/modals.html")
+
+    <!-- NAVBAR -->
+    @@include("@@webRoot/partials/navbar.html", {
+    "classList": "navbar-light fixed-top bg-white border-bottom"
+    })
+
+    <!-- BREADCRUMB -->
+    @@include("@@webRoot/partials/docs/breadcrumb.html", {
+    "title": "Changelog"
+    })
+
+    <!-- CONTENT -->
+    <section>
+      <div class="container-fluid">
+        <div class="row align-items-start">
+          <div class="col-lg-3 col-xl-2 docs-sidenav docs-sidenav-left">
+
+            @@include("@@webRoot/partials/docs/nav.html")
+
+          </div>
+          <div class="col-lg-9 col-xl-8 offset-lg-3 offset-xl-2 py-6 py-md-9 px-lg-10">
+
+            @@include("@@webRoot/partials/docs/header.html", {
+            "title": "Changelog",
+            "isCustom": false,
+            "description": "",
+            "bootstrapDocs": "",
+            "pluginDocs": ""
+            })
+
+            @@include("@@webRoot/partials/docs/subheader.html", {
+            "title": "",
+            "id": "id",
+            "isCustom": false,
+            "description": ""
+            })
+
+            <!-- Text -->
+            <p id="v110">
+              <span class="badge badge-primary-soft">v1.1.0</span> - June 17th, 2020
+            </p>
+
+            <!-- List -->
+            <ul>
+              <li>Added About page.</li>
+              <li>Added Help Center pages.</li>
+              <li>Added navbar reveal variation.</li>
+              <li>Added additonal footer variations.</li>
+              <li>Added Isotope plugin.</li>
+              <li>Added Mapbox plugin.</li>
+              <li>Updated Bootstrap to v4.5.0.</li>
+              <li>Updated other dependencies.</li>
+            </ul>
+
+            <!-- Text -->
+            <p>
+              New files:
+            </p>
+
+            <!-- List -->
+            <ul>
+              <li><code>dist/assets/img/about/*.jpg</code></li>
+              <li><code>src/html/about.html</code></li>
+              <li><code>src/html/docs/isotope.html</code></li>
+              <li><code>src/html/docs/map.html</code></li>
+              <li><code>src/html/help-center-article.html</code></li>
+              <li><code>src/html/help-center.html</code></li>
+              <li><code>src/html/partials/dropdown-account.html</code></li>
+              <li><code>src/html/partials/dropdown-docs.html</code></li>
+              <li><code>src/html/partials/dropdown-landings.html</code></li>
+              <li><code>src/html/partials/dropdown-pages.html</code></li>
+              <li><code>src/html/partials/footer-2.html</code></li>
+              <li><code>src/html/partials/footer-3.html</code></li>
+              <li><code>src/html/partials/footer-4.html</code></li>
+              <li><code>src/html/partials/icons/social-icons/*.svg</code></li>
+              <li><code>src/html/partials/navbar-2.html</code></li>
+              <li><code>src/js/isotope.js</code></li>
+              <li><code>src/js/map.js</code></li>
+              <li><code>src/js/navbar-reveal.js</code></li>
+              <li><code>src/scss/theme/_nav.scss</code></li>
+            </ul>
+
+            <!-- Text -->
+            <p>
+              Updated files:
+            </p>
+
+            <!-- List -->
+            <ul>
+              <li><code>package-lock.json</code></li>
+              <li><code>package.json</code></li>
+              <li><code>src/html/about.html</code></li>
+              <li><code>src/html/analytics-saas.html</code></li>
+              <li><code>src/html/blog-listing.html</code></li>
+              <li><code>src/html/blog-post-cover.html</code></li>
+              <li><code>src/html/blog-post.html</code></li>
+              <li><code>src/html/career-benefits.html</code></li>
+              <li><code>src/html/career-listing.html</code></li>
+              <li><code>src/html/course.html</code></li>
+              <li><code>src/html/docs/cards.html</code></li>
+              <li><code>src/html/docs/changelog.html</code></li>
+              <li><code>src/html/docs/navbar.html</code></li>
+              <li><code>src/html/docs/navs.html</code></li>
+              <li><code>src/html/e-commerce-platform.html</code></li>
+              <li><code>src/html/faq.html</code></li>
+              <li><code>src/html/help-center-article.html</code></li>
+              <li><code>src/html/help-center.html</code></li>
+              <li><code>src/html/hiring-agency.html</code></li>
+              <li><code>src/html/index.html</code></li>
+              <li><code>src/html/mobile-chat-app.html</code></li>
+              <li><code>src/html/partials/docs/nav.html</code></li>
+              <li><code>src/html/partials/dropdown-pages.html</code></li>
+              <li><code>src/html/partials/footer-2.html</code></li>
+              <li><code>src/html/partials/footer-3.html</code></li>
+              <li><code>src/html/partials/head.html</code></li>
+              <li><code>src/html/partials/navbar-2.html</code></li>
+              <li><code>src/html/partials/navbar.html</code></li>
+              <li><code>src/html/partials/scripts.html</code></li>
+              <li><code>src/html/pricing-feature-list.html</code></li>
+              <li><code>src/html/robo-advisor.html</code></li>
+              <li><code>src/html/software-automation.html</code></li>
+              <li><code>src/html/terms.html</code></li>
+              <li><code>src/js/isotope.js</code></li>
+              <li><code>src/js/navbar-reveal.js</code></li>
+              <li><code>src/scss/theme/_icons.scss</code></li>
+              <li><code>src/scss/theme/_navbar.scss</code></li>
+              <li><code>src/scss/theme/_reboot.scss</code></li>
+              <li><code>src/scss/theme/_theme.scss</code></li>
+              <li><code>src/scss/theme/_variables.scss</code></li>
+              <li><code>src/scss/theme/utilities/_borders.scss</code></li>
+            </ul>
+
+            <!-- Text -->
+            <p>
+              Renamed files:
+            </p>
+
+            <!-- List -->
+            <ul>
+              <li><code>src/js/{navbar.js → navbar-toggle.js}</code></li>
+            </ul>
+
+            <!-- Text -->
+            <p id="v100">
+              <span class="badge badge-primary-soft">v1.0.0</span> - April 22nd, 2020
+            </p>
+
+            <!-- List -->
+            <ul>
+              <li>Initial release.</li>
+            </ul>
+
+          </div>
+          <div class="col-lg-3 col-xl-2 d-none d-xl-block docs-sidenav docs-sidenav-right">
+
+            @@include("@@webRoot/partials/docs/subnav.html", {
+            "items": [{"title": "v1.1.0", "url": "#v110"}, {"title": "v1.0.0", "url": "#v100"} ]
+            })
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- JAVASCRIPT -->
+    @@include("@@webRoot/partials/scripts.html")
+
+  </body>
+</html>
