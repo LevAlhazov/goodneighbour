@@ -52,8 +52,12 @@ Licence URI: http://www.os-templates.com/template-terms
               <li><a href="#">Level 2</a></li>
             </ul>
           </li>
-          <li><a href="#">Sign Up</a></li>
-          <li><a href="#">Sign In</a></li>
+          {% if user.is.authenticated %}
+            <li><a href="#">Sign Out</a></li>
+          {% else %}
+            <li><a href="#">Sign Up</a></li>
+            <li><a href="#">Sign In</a></li>
+          {% endif %}
         </ul>
       </nav>
       <!-- ################################################################################################ -->

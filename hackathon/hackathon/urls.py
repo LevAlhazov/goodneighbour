@@ -21,5 +21,9 @@ from G_neighbour import views
 urlpatterns = [
     path('',include('G_neighbour.urls')),
     path('admin/', admin.site.urls),
+    #Auth
     path('signup/', views.signupuser, name='signupuser'),
+    path('logout/', views.logoutuser, name='logoutuser'),
+    path('login/', views.loginuser, name='loginuser'),
+    path('home/', views.home, name='home'),
 ]
