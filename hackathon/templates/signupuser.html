@@ -1,0 +1,15 @@
+<h1>Sign Up Page</h1>
+<h2> {{ error }}</h2>
+<form method="POST">
+    {{form.as_p}}
+    {% csrf_token %}
+    <form action="">
+    <select name="length">
+        <option value="1">משתמש תורם</option>
+        <option value="2">מבקש תרומה</option>
+    </select> Length
+    <br>
+        <br>
+    <button type="submit">Confirm</button>
+</form>
+
