@@ -12,6 +12,9 @@ def index(request):
 def home(request):
     return render(request,'home.html')
 
+def ban(request):
+    return render(request,'ban.html')
+
 def signupuser(request):
     if request.method=='GET':
         return render(request, 'signupuser.html' , {'form':UserCreationForm()})
@@ -45,3 +48,4 @@ def logoutuser(request):
     if request.method == 'POST':
         logout(request)
         return redirect('home')
+
