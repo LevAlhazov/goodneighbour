@@ -37,7 +37,7 @@ def signupuser(request):
                 group = Group.objects.get(name='Donators')
                 user.groups.add(group)
                 login(request, user)
-                return redirect('home')
+                return redirect('index')
 
             except IntegrityError:
                 return render(request, 'signupuser.html', {'form': CreateUserForm(), 'error': 'The user already exists, please try again'})
@@ -54,7 +54,7 @@ def loginuser(request):
             return render(request, 'loginuser.html', {'form': AuthenticationForm(), 'error':'Username or password did not match, please try again'})
         else:
             login(request, user)
-            return redirect('home')
+            return redirect('index')
 
 
 def logoutuser(request):
