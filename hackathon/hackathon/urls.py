@@ -27,4 +27,9 @@ urlpatterns = [
     path('login/', views.loginuser, name='loginuser'),
     path('home/', views.home, name='home'),
     path('banned/', views.ban, name='ban'),
+    path('create/', views.createdonationcard, name='createdonationcard'),
+    path('donations/', views.donations, name='donations'),
+    path('donations/<int:donation_pk>', views.viewdonation, name='viewdonation'),
+    path('donations/<int:donation_pk>/complete', views.completedonation, name='completedonation'),
+    path('donations/<int:donation_pk>/delete', views.deletedonation, name='deletedonation'),
 ]

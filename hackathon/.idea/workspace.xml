@@ -44,6 +44,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\lev_a\Desktop\siteproject\hackathon\static" />
       <recent name="C:\Users\lev_a\Desktop\siteproject\hackathon\G_neighbour\templates\G_neighbour" />
       <recent name="C:\Users\lev_a\Desktop\siteproject\hackathon\G_neighbour\templates" />
       <recent name="C:\Users\lev_a\Desktop\siteproject\hackathon\templates" />
@@ -59,6 +60,10 @@
       <updated>1606652572306</updated>
       <workItem from="1606656692707" duration="11054000" />
       <workItem from="1606667870040" duration="849000" />
+      <workItem from="1606669139227" duration="6022000" />
+      <workItem from="1606734016713" duration="1158000" />
+      <workItem from="1606735191643" duration="4382000" />
+      <workItem from="1606739803994" duration="14974000" />
     </task>
     <servers />
   </component>
@@ -78,9 +83,17 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="704" y="322" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1606750196745">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="704" y="322" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/-1920.-2.1920.1040@0.0.1920.1040" timestamp="1606750196745" />
     <state x="-746" y="237" key="FileChooserDialogImpl" timestamp="1606657892976">
       <screen x="-1920" y="-2" width="1920" height="1040" />
     </state>
     <state x="-746" y="237" key="FileChooserDialogImpl/0.0.1920.1040/-1920.-2.1920.1040@0.0.1920.1040" timestamp="1606657892976" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1606746873766">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/-1920.-2.1920.1040@0.0.1920.1040" timestamp="1606746873766" />
   </component>
 </project>
