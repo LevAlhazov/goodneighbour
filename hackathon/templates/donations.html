@@ -1,0 +1,15 @@
+{%  extends 'base.html' %}
+
+{% block content %}
+
+<ul>
+	{% for u_donation in u_donations %}
+	<li>
+		<a href="{% url 'viewdonation' u_donation.id %}">
+		{{ u_donation.title }}
+			</a>
+	</li>
+	{% endfor %}
+</ul>
+
+{% endblock content %}

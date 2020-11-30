@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+{{ error }}
+{{u_donations.title}}
+<form method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type="submit"> Save changes </button>
+    </form>
+
+<form method="POST" action="{% url 'completedonation' u_donation.id %}">
+    {% csrf_token %}
+    <button type="submit"> Complete </button>
+</form>
+
+<form method="POST" action="{% url 'deletedonation' u_donation.id %}">
+    {% csrf_token %}
+    <button type="submit"> Delete your donation card </button>
+</form>
+
+{% endblock %}
