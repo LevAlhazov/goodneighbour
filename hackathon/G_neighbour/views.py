@@ -5,13 +5,15 @@ from django.db import IntegrityError
 from django.contrib.auth import login, logout, authenticate
 from .forms import DonationCardForm, CreateUserForm
 from .models import *
-from .decorators import unauthenticated_user, allowed_users
+from .decorators import unauthenticated_user, allowed_user
 from django.contrib.auth.models import Group
 from django.utils import timezone
+from django.contrib.auth.decorators import login_required
+from django import template
+
 
 
 # Create your views here.
-
 def index(request):
     return render(request,'index.html')
 
@@ -22,20 +24,31 @@ def home(request):
     context = { 'donations': u_donations, 'Users':Users}
     return render(request,'home.html')
 
+
+def cardcreation(request):
+    return render(request, 'cardcreation.html')
+
+
 def ban(request):
     return render(request,'ban.html')
 
+
 @unauthenticated_user
 def signupuser(request):
-    if request.method=='GET':
-         return render(request, 'signupuser.html' , {'form':CreateUserForm()})
+    if request.method == 'GET':
+        return render(request, 'signupuser.html' , {'form':CreateUserForm()})
     else:
         if request.POST['password1'] == request.POST['password2']:
             try:
                 user = User.objects.create_user(request.POST['username'],password=request.POST['password1'])
                 user.save()
-                group = Group.objects.get(name='Donators')
-                user.groups.add(group)
+                given_type = int(request.POST.get('usertype'))
+                if given_type == 1:
+                    group = Group.objects.get(name='Donators')
+                    user.groups.add(group)
+                if given_type == 2:
+                    group = Group.objects.get(name='Receiver')
+                    user.groups.add(group)
                 login(request, user)
                 return redirect('index')
 
@@ -58,13 +71,13 @@ def loginuser(request):
 
 
 def logoutuser(request):
-    if request.method == 'POST':
+    if request.method == 'GET':
         logout(request)
-        return redirect('home')
+        return redirect('index')
     else:
-        return redirect('home')
+        return redirect('index')
 
-
+@allowed_user(allowed_roles = ["Donators"])
 def createdonationcard(request):
     if request.method == 'GET':
         return render(request, 'createdonationcard.html', {'form': DonationCardForm()})
@@ -78,10 +91,20 @@ def createdonationcard(request):
         except ValueError:
             return render(request, 'createdonationcard.html', {'form': DonationCardForm(), 'error':'Bad Data entered'})
 
+
+@allowed_user(allowed_roles = ["Donators"])
 def donations(request):
     u_donations = donation_card.objects.filter(user=request.user, datecompleted__isnull=True)
     return render(request, 'donations.html', {'u_donations': u_donations})
 
+
+@allowed_user(allowed_roles = ["Donators"])
+def completeddonations(request):
+    u_donations = donation_card.objects.filter(user=request.user, datecompleted__isnull=False)
+    return render(request, 'completeddonations.html', {'u_donations': u_donations})
+
+
+@allowed_user(allowed_roles = ["Donators"])
 def viewdonation(request, donation_pk):
     u_donation = get_object_or_404(donation_card, pk=donation_pk)
     if request.method == 'GET':
@@ -95,6 +118,23 @@ def viewdonation(request, donation_pk):
         except ValueError:
             return render(request, 'viewdonation.html', {'u_donation': u_donation , 'form':form, 'error':'Bad entry'})
 
+
+@allowed_user(allowed_roles = ["Donators"])
+def viewcompleted(request, donation_pk):
+    u_donation = get_object_or_404(donation_card, pk=donation_pk)
+    if request.method == 'GET':
+        form = DonationCardForm(instance=u_donation)
+        return render(request, 'viewcompleted.html', {'u_donation': u_donation , 'form':form})
+    else:
+        try:
+            form = DonationCardForm(request.POST, instance=u_donation)
+            form.save()
+            return redirect('completeddonations')
+        except ValueError:
+            return render(request, 'viewcompleted.html', {'u_donation': u_donation , 'form':form, 'error':'Bad entry'})
+
+
+@allowed_user(allowed_roles = ["Donators"])
 def completedonation(request, donation_pk):
     u_donation = get_object_or_404(donation_card, pk=donation_pk, user=request.user)
     if request.method == 'POST':
@@ -102,8 +142,11 @@ def completedonation(request, donation_pk):
         u_donation.save()
         return redirect('donations')
 
+
+@allowed_user(allowed_roles = ["Donators"])
 def deletedonation(request, donation_pk):
     u_donation = get_object_or_404(donation_card, pk=donation_pk, user=request.user)
     if request.method == 'POST':
         u_donation.delete()
         return redirect('donations')
+

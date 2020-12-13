@@ -29,7 +29,10 @@ urlpatterns = [
     path('banned/', views.ban, name='ban'),
     path('create/', views.createdonationcard, name='createdonationcard'),
     path('donations/', views.donations, name='donations'),
+    path('completeddonations/', views.completeddonations, name='completeddonations'),
+    path('cardcreation/', views.cardcreation, name='cardcreation' ),
     path('donations/<int:donation_pk>', views.viewdonation, name='viewdonation'),
+    path('completeddonations/<int:donation_pk>)', views.viewcompleted, name='viewcompleted'),
     path('donations/<int:donation_pk>/complete', views.completedonation, name='completedonation'),
     path('donations/<int:donation_pk>/delete', views.deletedonation, name='deletedonation'),
 ]

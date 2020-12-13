@@ -1,3 +1,12 @@
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css" integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+<!DOCTYPE html>
 
 <!DOCTYPE html>
 {% load static %}
@@ -8,7 +17,7 @@ Author URI: http://www.os-templates.com/
 Licence: Free to use under our free template licence terms
 Licence URI: http://www.os-templates.com/template-terms
 -->
-<html xmlns="http://www.w3.org/1999/html">
+<html>
 <head>
 <title>Geodarn | Pages | Full Width</title>
 <meta charset="utf-8">
@@ -30,7 +39,7 @@ Licence URI: http://www.os-templates.com/template-terms
       </div>
       <nav id="mainav" class="fl_right">
         <ul class="clear">
-          <li><a href="{% url 'index' %}">Home</a></li>
+          <li><a href="index.html">Home</a></li>
           <li class="active"><a class="drop" href="#">Pages</a>
             <ul>
               <li><a href="gallery.html">Gallery</a></li>
@@ -86,46 +95,21 @@ Licence URI: http://www.os-templates.com/template-terms
     <!-- main body -->
     <!-- ################################################################################################ -->
       <!-- ################################################################################################ -->
-
-   {% block content %}
-     <div class="btmspace-40 center">
-      <img src="{% static 'images/demo/troma.png' %}" alt="Responsive image">
-    </div>
-    <div class="btmspace-40 right">
-    <div class="row justify-content-center mt-5">
-        <div class="col-md-10">
-        {% if u_donations %}
-            <div class="list-group">
-                {% for u_donation in u_donations %}
-                    <a href="{% url 'viewdonation' u_donation.id %}" class="list-group-item list-group-item-action"><b>{{ u_donation.title }}</b> </a>
-              <br>
-                {% endfor %}
-            </div>
-        {% else %}
-            <div class="text-center">
-                <h2>כרגע אין לך כרטיסי תרומה, לפתיחה לחץ כאן</h2>
-            <br>
-            <a role="button" class="btn btn-primary" href="{% url 'createdonationcard' %}">פתח כרטיס תרומה</a>
-            </div>
-        {% endif %}
-        </div>
-    </div>
-</div>
-<!--	{% for u_donation in u_donations %}-->
-<!--	<li>-->
-<!--		<a href="{% url 'viewdonation' u_donation.id %}">-->
-<!--		{{ u_donation.title }}-->
-<!--        </a>-->
-<!--	</li>-->
-<!--	{% endfor %}-->
-
-      <footer class="mastfoot mt-auto">
-        <div class="inner">
-        </div>
-      </footer>
+     {% block content %}
+    <div class="btmspace-40 center">
+    <img src="{% static 'images/demo/aroh.png' %}" alt="Responsive image">
     </div>
 
-{% endblock content %}
+{{ error }}
+{{u_donations.title}}
+<form method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+</form>
+      <li><a href="{% url 'completeddonations' %}" >Return to Completed</a></li>
+
+
+{% endblock %}
 
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
@@ -137,7 +121,6 @@ Licence URI: http://www.os-templates.com/template-terms
 <script src="{% static 'layout/scripts/jquery.mobilemenu.js' %}"></script>
 </body>
 </html>
-
 
 
 

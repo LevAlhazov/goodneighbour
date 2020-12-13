@@ -1,5 +1,14 @@
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css" integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
 <!DOCTYPE html>
 {% load static %}
+
 <!--
 Template Name: Geodarn
 Author: <a href="http://www.os-templates.com/">OS Templates</a>
@@ -25,22 +34,25 @@ Licence URI: http://www.os-templates.com/template-terms
     <header id="header" class="hoc clear"> 
       <!-- ################################################################################################ -->
       <div id="logo" class="fl_left">
-        <h1><a href="">Good Neighbour</a></h1>
+        <h1 style="color:gold"><a href="">Good Neighbour</a></h1>
+        <body style="background-color:green;">
       </div>
       <nav id="mainav" class="fl_right">
         <ul class="clear">
           <li class="active"><a href="">Home</a></li>
           {% if user.is_authenticated %}
-          <li><a class="active" href="create/">פתח כרטיס</a>
-            {% else %}
+          {% ifequal user.groups.all.0.name "Donators"%}
+          <li><a class="active" >אפשרויות</a>
+            {% endifequal %}
             {% endif %}
-<!--            <ul>-->
-<!--              <li><a href="{% static 'pages/gallery.html' %}">Gallery</a></li>-->
-<!--              <li><a href="{% static 'pages/full-width.html' %}">Full Width</a></li>-->
-<!--              <li><a href="{% static 'pages/sidebar-left.html' %}">Sidebar Left</a></li>-->
-<!--              <li><a href="{% static 'pages/sidebar-right.html' %}">Sidebar Right</a></li>-->
-<!--              <li><a href="{% static 'pages/basic-grid.html' %}">Basic Grid</a></li>-->
-<!--            </ul>-->
+<!--             remember to add else -->
+            <ul>
+              <li><a href="donations/">כרטיסי התרומה שלי</a></li>
+              <li><a href="create/">פתח כרטיס</a></li>
+              <li><a href="{% static 'pages/sidebar-left.html' %}">Sidebar Left</a></li>
+              <li><a href="{% static 'pages/sidebar-right.html' %}">Sidebar Right</a></li>
+              <li><a href="{% static 'pages/basic-grid.html' %}">Basic Grid</a></li>
+            </ul>
           </li>
 <!--          <li><a class="drop" href="#">Dropdown</a>-->
 <!--            <ul>-->
@@ -56,7 +68,7 @@ Licence URI: http://www.os-templates.com/template-terms
 <!--            </ul>-->
 <!--          </li>-->
           {% if user.is_authenticated %}
-            <li><a href="{% url 'logoutuser' %}">Sign Out</a></li>
+            <li><a href="{% url 'logoutuser' %}" >Sign Out</a></li>
           {% else %}
             <li><a href="signup/">Sign Up</a></li>
             <li><a href="login/">Sign In</a></li>
@@ -75,18 +87,16 @@ Licence URI: http://www.os-templates.com/template-terms
       <ul class="slides">
         <li>
           <article>
-            <p>Ullamcorper</p>
-            <h3 class="heading">Maecenas nulla tellus</h3>
-            <p>Vitae lobortis id ut mi in molestie in</p>
-            <footer><a class="btn" href="#">Venenatis curabitur</a></footer>
+            <p>תרומות</p>
+            <h3 class="heading">לרשימת התרומות באתר</h3>
+            <footer><a class="btn" href="#">מעבר לתרומות</a></footer>
           </article>
         </li>
         <li>
           <article>
-            <p>Scelerisque</p>
-            <h3 class="heading">Dolor rhoncus nullam</h3>
-            <p>Augue non id quam sit amet urna lobortis</p>
-            <footer><a class="btn inverse" href="#">Interdum lectus</a></footer>
+            <p>מידע</p>
+            <h3 class="heading">דף מידע בנוגע לאתר ומפתחיו</h3>
+            <footer><a class="btn" href="#">המשך למידע</a></footer>
           </article>
         </li>
         <li>
@@ -107,8 +117,8 @@ Licence URI: http://www.os-templates.com/template-terms
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
-<div class="wrapper row3">
-  <main class="hoc container clear"> 
+<div class="wrapper row3" style="background-image:url('{% static 'images/demo/green.png' %}');">
+  <main class="hoc container clear">
     <!-- main body -->
     <!-- ################################################################################################ -->
     <div class="btmspace-80 center">
@@ -116,8 +126,8 @@ Licence URI: http://www.os-templates.com/template-terms
       <p class="nospace">Erat in diam eu placerat purus est ac nisi integer sed rutrum dictum.</p>
     </div>
     <ul class="nospace group services">
-      <li class="one_third first active">
-        <article class="bgded overlay" style="background-image:url('{% static 'images/demo/320x340.png' %}');">
+      <li class="one_third first ">
+        <article class="bgded overlay" style="background-image:url('{% static 'images/demo/button_back.png' %}');">
           <div class="txtwrap"><i class="block fa fa-4x fa-apple"></i>
             <h6 class="heading">Ullamcorper</h6>
             <p>Lacus eget nullam in ornare magna nam vitae volutpat justo tincidunt&hellip;</p>
@@ -126,7 +136,7 @@ Licence URI: http://www.os-templates.com/template-terms
         </article>
       </li>
       <li class="one_third">
-        <article class="bgded overlay" style="background-image:url('{% static 'images/demo/320x340.png' %}');">
+        <article class="bgded overlay" style="background-image:url('{% static 'images/demo/button_back.png' %}');">
           <div class="txtwrap"><i class="block fa fa-4x fa-child"></i>
             <h6 class="heading">Malesuada</h6>
             <p>Lacus donec molestie sodales ut nunc felis malesuada quis semper fringilla&hellip;</p>
@@ -134,38 +144,11 @@ Licence URI: http://www.os-templates.com/template-terms
           <footer><a href="#">More &raquo;</a></footer>
         </article>
       </li>
-      <li class="one_third active">
-        <article class="bgded overlay" style="background-image:url('{% static 'images/demo/320x340.png' %}');">
+      <li class="one_third">
+        <article class="bgded overlay" style="background-image:url('{% static 'images/demo/button_back.png' %}');">
           <div class="txtwrap"><i class="block fa fa-4x fa-chrome"></i>
             <h6 class="heading">Facilisis</h6>
             <p>Nec velit mauris molestie dui et dignissim vestibulum diam tortor cursus&hellip;</p>
-          </div>
-          <footer><a href="#">More &raquo;</a></footer>
-        </article>
-      </li>
-      <li class="one_third first">
-        <article class="bgded overlay" style="background-image:url('{% static 'images/demo/320x340.png' %}');">
-          <div class="txtwrap"><i class="block fa fa-4x fa-lock"></i>
-            <h6 class="heading">Venenatis</h6>
-            <p>Phasellus ut tortor vel mattis lorem dui tortor amet odio quis metus varius&hellip;</p>
-          </div>
-          <footer><a href="#">More &raquo;</a></footer>
-        </article>
-      </li>
-      <li class="one_third active">
-        <article class="bgded overlay" style="background-image:url('{% static 'images/demo/320x340.png' %}');">
-          <div class="txtwrap"><i class="block fa fa-4x fa-rocket"></i>
-            <h6 class="heading">Malesuada</h6>
-            <p>Vitae est sed rhoncus rutrum ligula quis placerat quisque nec lacinia nisi&hellip;</p>
-          </div>
-          <footer><a href="#">More &raquo;</a></footer>
-        </article>
-      </li>
-      <li class="one_third">
-        <article class="bgded overlay" style="background-image:url('{% static 'images/demo/320x340.png' %}');">
-          <div class="txtwrap"><i class="block fa fa-4x fa-train"></i>
-            <h6 class="heading">Ultricies</h6>
-            <p>Venenatis in eget cursus lorem integer vulputate enim vel facilisis sapien&hellip;</p>
           </div>
           <footer><a href="#">More &raquo;</a></footer>
         </article>
@@ -179,50 +162,12 @@ Licence URI: http://www.os-templates.com/template-terms
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
-<div class="wrapper">
-  <article id="shout" class="hoc container clear"> 
-    <!-- ################################################################################################ -->
-    <div class="three_quarter first">
-      <h2 class="heading btmspace-10">Magna lacus mattis in ipsum tincidunt</h2>
-      <p class="nospace">Porta erat cras vitae maximus purus suspendisse blandit nec justo mollis etiam vitae.</p>
-    </div>
-    <footer class="one_quarter"><a class="btn" href="#">Accumsan metus</a></footer>
-    <!-- ################################################################################################ -->
-  </article>
-</div>
+
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
-<div class="wrapper row3">
-  <section class="hoc container clear"> 
-    <!-- ################################################################################################ -->
-    <div class="btmspace-80 center">
-      <h3 class="nospace">Gravida nulla aliquam</h3>
-      <p class="nospace">Erat volutpat integer vestibulum purus et sagittis rhoncus.</p>
-    </div>
-    <div class="group">
-      <div class="one_third first">
-        <h6 class="nospace font-x1">Elit vel porttitor</h6>
-        <p>Ex suspendisse vestibulum turpis luctus pretium posuere vestibulum feugiat non metus quis vitae&hellip;</p>
-        <footer><a class="btn" href="#">Read More</a></footer>
-      </div>
-      <article class="one_third"><a href="#"><img class="btmspace-30" src="{% static 'images/demo/320x210.png' %}" alt=""></a>
-        <h6 class="nospace font-x1">Sapien porttitor ut</h6>
-        <p>Dignissim praesent consectetur nec tellus ut rutrum nam laoreet finibus mattis integer ullamcorper arcu&hellip;</p>
-      </article>
-      <article class="one_third"><a href="#"><img class="btmspace-30" src="{% static 'images/demo/320x210.png' %}" alt=""></a>
-        <h6 class="nospace font-x1">Praesent sed blandit</h6>
-        <p>Pellentesque vehicula dictum ligula tellus convallis nisl vel scelerisque quam ligula a mauris quisque&hellip;</p>
-      </article>
-    </div>
-    <!-- ################################################################################################ -->
-  </section>
-</div>
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
-<div class="wrapper row4 bgded overlay" style="background-image:url('{% static 'images/demo/320x340.png' %}');">
-  <footer id="footer" class="hoc clear"> 
+<div class="wrapper row4 bgded overlay" style="background-image:url('{% static 'images/demo/backgrounds/02.png' %}');">
+  <footer id="footer" class="hoc clear">
     <!-- ################################################################################################ -->
 
     <div class="one_third">

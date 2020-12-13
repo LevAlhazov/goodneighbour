@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="BranchesTreeState">
     <expand>
       <path>
@@ -19,7 +22,25 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eb8447e4-c555-4381-b69e-ce004fe8d2eb" name="Default Changelist" comment="" />
+    <list default="true" id="eb8447e4-c555-4381-b69e-ce004fe8d2eb" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/templates/completeddonations.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/viewcompleted.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/G_neighbour/decorators.py" beforeDir="false" afterPath="$PROJECT_DIR$/G_neighbour/decorators.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/G_neighbour/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/G_neighbour/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/G_neighbour/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/G_neighbour/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/G_neighbour/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/G_neighbour/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hackathon/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/hackathon/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images/demo/backgrounds/01.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/images/demo/backgrounds/01.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images/demo/backgrounds/02.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/images/demo/backgrounds/02.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/pages/full-width.html" beforeDir="false" afterPath="$PROJECT_DIR$/static/pages/full-width.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/createdonationcard.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/createdonationcard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/donations.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/donations.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/signupuser.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/signupuser.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/viewdonation.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/viewdonation.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -39,16 +60,81 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.language" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\lev_a\Documents\GitHub\goodneighbour\hackathon\templates" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\lev_a\Documents\GitHub\goodneighbour\hackathon\hackathon" />
+      <recent name="C:\Users\lev_a\Documents\GitHub\goodneighbour\hackathon\G_neighbour" />
+      <recent name="C:\Users\lev_a\Documents\GitHub\goodneighbour\hackathon\G_neighbour\migrations" />
       <recent name="C:\Users\lev_a\Desktop\siteproject\hackathon\static" />
       <recent name="C:\Users\lev_a\Desktop\siteproject\hackathon\G_neighbour\templates\G_neighbour" />
-      <recent name="C:\Users\lev_a\Desktop\siteproject\hackathon\G_neighbour\templates" />
-      <recent name="C:\Users\lev_a\Desktop\siteproject\hackathon\templates" />
     </key>
+  </component>
+  <component name="RunManager" selected="Python.manage">
+    <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/views.py/templates/index.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="manage" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="hackathon" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/manage.py" />
+      <option name="PARAMETERS" value="runserver" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="urls" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="hackathon" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/hackathon" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/hackathon/urls.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="JavaScript Debug.index.html" />
+      <item itemvalue="Python.manage" />
+      <item itemvalue="Python.urls" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.manage" />
+        <item itemvalue="JavaScript Debug.index.html" />
+        <item itemvalue="Python.urls" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -64,6 +150,10 @@
       <workItem from="1606734016713" duration="1158000" />
       <workItem from="1606735191643" duration="4382000" />
       <workItem from="1606739803994" duration="14974000" />
+      <workItem from="1607851801722" duration="12968000" />
+      <workItem from="1607866075346" duration="66000" />
+      <workItem from="1607866150741" duration="6000" />
+      <workItem from="1607867894280" duration="16370000" />
     </task>
     <servers />
   </component>
@@ -83,17 +173,46 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1607851822608">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1607851822608" />
     <state x="704" y="322" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1606750196745">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="704" y="322" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/-1920.-2.1920.1040@0.0.1920.1040" timestamp="1606750196745" />
-    <state x="-746" y="237" key="FileChooserDialogImpl" timestamp="1606657892976">
-      <screen x="-1920" y="-2" width="1920" height="1040" />
+    <state x="1174" y="239" key="FileChooserDialogImpl" timestamp="1607853708450">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state x="1174" y="239" key="FileChooserDialogImpl/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1607853708450" />
     <state x="-746" y="237" key="FileChooserDialogImpl/0.0.1920.1040/-1920.-2.1920.1040@0.0.1920.1040" timestamp="1606657892976" />
+    <state width="1860" height="269" key="GridCell.Tab.0.bottom" timestamp="1607883603982">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1860" height="269" key="GridCell.Tab.0.bottom/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1607883603982" />
+    <state width="1860" height="269" key="GridCell.Tab.0.center" timestamp="1607883603982">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1860" height="269" key="GridCell.Tab.0.center/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1607883603982" />
+    <state width="1860" height="269" key="GridCell.Tab.0.left" timestamp="1607883603982">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1860" height="269" key="GridCell.Tab.0.left/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1607883603982" />
+    <state width="1860" height="269" key="GridCell.Tab.0.right" timestamp="1607883603982">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1860" height="269" key="GridCell.Tab.0.right/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1607883603982" />
+    <state x="461" y="165" key="SettingsEditor" timestamp="1607852208198">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="461" y="165" key="SettingsEditor/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1607852208198" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1606746873766">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/-1920.-2.1920.1040@0.0.1920.1040" timestamp="1606746873766" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/views_py$urls.coverage" NAME="urls Coverage Results" MODIFIED="1607852946743" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/hackathon" />
+    <SUITE FILE_PATH="coverage/views_py$manage.coverage" NAME="manage Coverage Results" MODIFIED="1607883603977" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

@@ -14,3 +14,4 @@ class donation_card(models.Model):
 
     def __str__(self):
         return self.title
+
