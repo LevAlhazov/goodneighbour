@@ -22,7 +22,24 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eb8447e4-c555-4381-b69e-ce004fe8d2eb" name="Default Changelist" comment="" />
+    <list default="true" id="eb8447e4-c555-4381-b69e-ce004fe8d2eb" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/hackathon.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/hackathon.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/G_neighbour/decorators.py" beforeDir="false" afterPath="$PROJECT_DIR$/G_neighbour/decorators.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/G_neighbour/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/G_neighbour/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/G_neighbour/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/G_neighbour/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/G_neighbour/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/G_neighbour/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hackathon/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/hackathon/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hackathon/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/hackathon/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/completeddonations.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/completeddonations.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/createdonationcard.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/createdonationcard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/donations.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/donations.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/viewcompleted.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/viewcompleted.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/viewdonation.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/viewdonation.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -42,8 +59,8 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.language" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -106,14 +123,12 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="JavaScript Debug.index.html" />
       <item itemvalue="Python.manage" />
       <item itemvalue="Python.urls" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.manage" />
-        <item itemvalue="JavaScript Debug.index.html" />
         <item itemvalue="Python.urls" />
       </list>
     </recent_temporary>
@@ -184,17 +199,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1860" height="269" key="GridCell.Tab.0.right/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1607883603982" />
-    <state x="461" y="165" key="SettingsEditor" timestamp="1607852208198">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="170" y="73" key="SettingsEditor" timestamp="1607888269503">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="461" y="165" key="SettingsEditor/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1607852208198" />
+    <state x="170" y="73" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1607888269503" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1606746873766">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/-1920.-2.1920.1040@0.0.1920.1040" timestamp="1606746873766" />
-  </component>
-  <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/views_py$urls.coverage" NAME="urls Coverage Results" MODIFIED="1607852946743" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/hackathon" />
-    <SUITE FILE_PATH="coverage/views_py$manage.coverage" NAME="manage Coverage Results" MODIFIED="1607883603977" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

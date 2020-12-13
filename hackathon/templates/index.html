@@ -1,11 +1,11 @@
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+<!--&lt;!&ndash; Latest compiled and minified CSS &ndash;&gt;-->
+<!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">-->
 
-<!-- Optional theme -->
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css" integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
+<!--&lt;!&ndash; Optional theme &ndash;&gt;-->
+<!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css" integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">-->
 
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+<!--&lt;!&ndash; Latest compiled and minified JavaScript &ndash;&gt;-->
+<!--<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>-->
 <!DOCTYPE html>
 {% load static %}
 
@@ -28,18 +28,17 @@ Licence URI: http://www.os-templates.com/template-terms
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- Top Background Image Wrapper -->
-<div class="bgded overlay" style="background-image:url('{% static 'images/demo/backgrounds/01.png' %}');">
+<div class="bgded overlay" style="background-image:url('{% static 'images/demo/backgrounds/blah.jpg' %}');">
   <!-- ################################################################################################ -->
   <div class="wrapper row1">
     <header id="header" class="hoc clear"> 
       <!-- ################################################################################################ -->
       <div id="logo" class="fl_left">
-        <h1 style="color:gold"><a href="">Good Neighbour</a></h1>
-        <body style="background-color:green;">
+        <h1 style="color:gold"><a href="{% url 'index' %}">Good Neighbour</a></h1>
       </div>
       <nav id="mainav" class="fl_right">
         <ul class="clear">
-          <li class="active"><a href="">Home</a></li>
+          <li class="active"><a href="{% url 'index' %}">Home</a></li>
           {% if user.is_authenticated %}
           {% ifequal user.groups.all.0.name "Donators"%}
           <li><a class="active" >אפשרויות</a>
@@ -49,7 +48,7 @@ Licence URI: http://www.os-templates.com/template-terms
             <ul>
               <li><a href="donations/">כרטיסי התרומה שלי</a></li>
               <li><a href="create/">פתח כרטיס</a></li>
-              <li><a href="{% static 'pages/sidebar-left.html' %}">Sidebar Left</a></li>
+              <li><a href="{% url 'completeddonations' %}">כרטיסים שהושלמו</a></li>
               <li><a href="{% static 'pages/sidebar-right.html' %}">Sidebar Right</a></li>
               <li><a href="{% static 'pages/basic-grid.html' %}">Basic Grid</a></li>
             </ul>
@@ -166,7 +165,7 @@ Licence URI: http://www.os-templates.com/template-terms
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
-<div class="wrapper row4 bgded overlay" style="background-image:url('{% static 'images/demo/backgrounds/02.png' %}');">
+<div class="wrapper row4 bgded overlay" style="background-image:url('{% static 'images/demo/backgrounds/bleh2.png' %}');">
   <footer id="footer" class="hoc clear">
     <!-- ################################################################################################ -->
 
