@@ -22,25 +22,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eb8447e4-c555-4381-b69e-ce004fe8d2eb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/templates/completeddonations.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/viewcompleted.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/G_neighbour/decorators.py" beforeDir="false" afterPath="$PROJECT_DIR$/G_neighbour/decorators.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/G_neighbour/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/G_neighbour/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/G_neighbour/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/G_neighbour/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/G_neighbour/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/G_neighbour/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hackathon/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/hackathon/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/demo/backgrounds/01.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/images/demo/backgrounds/01.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/demo/backgrounds/02.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/images/demo/backgrounds/02.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/pages/full-width.html" beforeDir="false" afterPath="$PROJECT_DIR$/static/pages/full-width.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/createdonationcard.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/createdonationcard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/donations.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/donations.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/signupuser.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/signupuser.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/viewdonation.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/viewdonation.html" afterDir="false" />
-    </list>
+    <list default="true" id="eb8447e4-c555-4381-b69e-ce004fe8d2eb" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -153,7 +135,7 @@
       <workItem from="1607851801722" duration="12968000" />
       <workItem from="1607866075346" duration="66000" />
       <workItem from="1607866150741" duration="6000" />
-      <workItem from="1607867894280" duration="16370000" />
+      <workItem from="1607867894280" duration="16965000" />
     </task>
     <servers />
   </component>
