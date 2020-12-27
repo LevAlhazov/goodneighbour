@@ -154,3 +154,9 @@ def deletedonation(request, donation_pk):
     if request.method == 'POST':
         u_donation.delete()
         return redirect('donations')
+
+def information(request):
+    return render(request, 'information.html')
+
+def officialbodies(request):
+    return render(request, 'officialbodies.html')

@@ -9,6 +9,19 @@ class donation_card(models.Model):
     content = models.TextField(blank=True)
     created = models.DateTimeField(auto_now_add=True)
     datecompleted = models.DateTimeField(null=True)
+    location = models.CharField(max_length=150)
+    # Stores the relationship between a donation card and a user
+    user = models.ForeignKey(User, null=True, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.title
+
+class request_card(models.Model):
+    title = models.CharField(max_length=150)
+    content = models.TextField(blank=True)
+    created = models.DateTimeField(auto_now_add=True)
+    datecompleted = models.DateTimeField(null=True)
+    location = models.CharField(max_length=150)
     # Stores the relationship between a donation card and a user
     user = models.ForeignKey(User, null=True, on_delete=models.CASCADE)
 

@@ -34,4 +34,7 @@ urlpatterns = [
     path('completeddonations/<int:donation_pk>)', views.viewcompleted, name='viewcompleted'),
     path('donations/<int:donation_pk>/complete', views.completedonation, name='completedonation'),
     path('donations/<int:donation_pk>/delete', views.deletedonation, name='deletedonation'),
+    path('information/', views.information, name='information'),
+    path('officialbodies/', views.officialbodies, name='officialbodies'),
+
 ]

@@ -38,7 +38,7 @@ Licence URI: http://www.os-templates.com/template-terms
       </div>
       <nav id="mainav" class="fl_right">
         <ul class="clear">
-          <li class="active"><a href="{% url 'index' %}">Home</a></li>
+          <li class=""><a href="{% url 'index' %}">עמוד הבית</a></li>
           {% if user.is_authenticated %}
           {% ifequal user.groups.all.0.name "Donators"%}
           <li><a class="active" >אפשרויות</a>
@@ -53,6 +53,8 @@ Licence URI: http://www.os-templates.com/template-terms
               <li><a href="{% static 'pages/basic-grid.html' %}">Basic Grid</a></li>
             </ul>
           </li>
+
+
 <!--          <li><a class="drop" href="#">Dropdown</a>-->
 <!--            <ul>-->
 <!--              <li><a href="#">Level 2</a></li>-->
@@ -67,10 +69,10 @@ Licence URI: http://www.os-templates.com/template-terms
 <!--            </ul>-->
 <!--          </li>-->
           {% if user.is_authenticated %}
-            <li><a href="{% url 'logoutuser' %}" >Sign Out</a></li>
+            <li><a href="{% url 'logoutuser' %}" >התנתקות</a></li>
           {% else %}
-            <li><a href="signup/">Sign Up</a></li>
-            <li><a href="login/">Sign In</a></li>
+            <li><a href="signup/">הרשמה</a></li>
+            <li><a href="login/">התחברות</a></li>
           {% endif %}
         </ul>
       </nav>
@@ -94,16 +96,16 @@ Licence URI: http://www.os-templates.com/template-terms
         <li>
           <article>
             <p>מידע</p>
-            <h3 class="heading">דף מידע בנוגע לאתר ומפתחיו</h3>
-            <footer><a class="btn" href="#">המשך למידע</a></footer>
+            <h3 class="heading">דף מידע בנוגע לאתר </h3>
+            <footer><a class="btn" href="{% url 'information' %}">המשך למידע</a></footer>
           </article>
         </li>
         <li>
           <article>
-            <p>Vestibulum</p>
-            <h3 class="heading">Justo erat venenatis</h3>
-            <p>Tempor sit amet ac nibh nullam mattis</p>
-            <footer><a class="btn" href="#">Bibendum magna</a></footer>
+            <p>רישמי</p>
+            <h3 class="heading">גורמים תרומה ועזרה רשמיים</h3>
+            <p>ריכוז דרכי יצירת קשר למקורות רשמיים אשר מתעסקים בתמיכה נפשית ומתן תרומה</p>
+            <footer><a class="btn" href="{% url 'officialbodies' %}">מעבר לעמוד</a></footer>
           </article>
         </li>
       </ul>
