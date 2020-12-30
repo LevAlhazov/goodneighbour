@@ -3,11 +3,14 @@ from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.models import User
 from django.db import IntegrityError
 from django.contrib.auth import login, logout, authenticate
-from .forms import DonationCardForm, CreateUserForm
+from .forms import DonationCardForm, CreateUserForm, CreateRequestForm, ContactForm, ReportForm
 from .models import *
 from .decorators import unauthenticated_user, allowed_user
 from django.contrib.auth.models import Group
 from django.utils import timezone
+from django.http import HttpResponse, HttpResponseRedirect
+from django.core.mail import send_mail, BadHeaderError
+from django.contrib.auth import get_user_model
 from django.contrib.auth.decorators import login_required
 from django import template
 
@@ -155,8 +158,134 @@ def deletedonation(request, donation_pk):
         u_donation.delete()
         return redirect('donations')
 
-def information(request):
-    return render(request, 'information.html')
 
-def officialbodies(request):
-    return render(request, 'officialbodies.html')
+@allowed_user(allowed_roles=["Receiver"])
+def createrequest(request):
+    if request.method == 'GET':
+        return render(request, 'createrequest.html', {'form': CreateRequestForm()})
+    else:
+        try:
+            form = CreateRequestForm(request.POST)
+            newcard = form.save(commit=False)
+            newcard.user = request.user
+            newcard.save()
+            return redirect('requests')
+        except ValueError:
+            return render(request, 'createrequest.html', {'form': CreateRequestForm(), 'error': 'Bad Data entered'})
+
+
+@allowed_user(allowed_roles=["Receiver"])
+def completedrequests(request):
+    u_requests = request_card.objects.filter(user=request.user, datecompleted__isnull=False)
+    return render(request, 'completedrequests.html', {'u_requests': u_requests})
+
+@allowed_user(allowed_roles=["Receiver"])
+def viewcompletedrequests(request, request_pk):
+    u_request = get_object_or_404(request_card, pk=request_pk)
+    if request.method == 'GET':
+        form = CreateRequestForm(instance=u_request)
+        return render(request, 'viewcompletedrequests.html', {'u_request': u_request, 'form': form})
+    else:
+        try:
+            form = CreateRequestForm(request.POST, instance=u_request)
+            form.save()
+            return redirect('viewcompletedrequests')
+        except ValueError:
+            return render(request, 'viewcompletedrequests.html', {'u_request': u_request, 'form': form, 'error': 'Bad entry'})
+
+
+@allowed_user(allowed_roles=["Receiver"])
+def requests(request):
+    u_requests = request_card.objects.filter(user=request.user, datecompleted__isnull=True)
+    return render(request, 'requests.html', {'u_requests': u_requests})
+
+
+@allowed_user(allowed_roles=["Receiver"])
+def viewrequest(request, request_pk):
+    u_request = get_object_or_404(request_card, pk=request_pk)
+    if request.method == 'GET':
+        form = CreateRequestForm(instance=u_request)
+        return render(request, 'viewrequest.html', {'u_request': u_request, 'form': form})
+    else:
+        try:
+            form = CreateRequestForm(request.POST, instance=u_request)
+            form.save()
+            return redirect('requests')
+        except ValueError:
+            return render(request, 'viewrequest.html', {'u_request': u_request, 'form': form, 'error': 'Bad entry'})
+
+
+@allowed_user(allowed_roles=["Receiver"])
+def completerequest(request, request_pk):
+    u_request = get_object_or_404(request_card, pk=request_pk, user=request.user)
+    if request.method == 'POST':
+        u_request.datecompleted = timezone.now()
+        u_request.save()
+        return redirect('requests')
+
+
+@allowed_user(allowed_roles=["Receiver"])
+def deleterequest(request, request_pk):
+    u_request = get_object_or_404(request_card, pk=request_pk, user=request.user)
+    if request.method == 'POST':
+        u_request.delete()
+        return redirect('requests')
+
+
+def generaldonations(request):
+    u_donations = donation_card.objects.all()
+    return render(request, 'generaldonations.html', {'u_donations': u_donations })
+
+
+def generalrequests(request):
+    u_requests = request_card.objects.all()
+    return render(request, 'generalrequests.html', {'u_requests': u_requests })
+
+
+def contactView(request):
+    if request.method == 'GET':
+        form = ContactForm()
+    else:
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            subject = form.cleaned_data['subject']
+            from_email = form.cleaned_data['from_email']
+            message = form.cleaned_data['message']
+            try:
+                send_mail(subject, message, from_email, ['lev_alk@hotmail.com'],fail_silently=False)
+            except BadHeaderError:
+                return HttpResponse('Invalid header found.')
+            return redirect('success')
+    return render(request, "contact.html", {'form': form})
+
+
+def successView(request):
+    return render(request, "index.html")
+
+
+def reportView(request):
+    if request.method == 'GET':
+        form = ReportForm()
+    else:
+        form = ReportForm(request.POST)
+        if form.is_valid():
+            reason = form.cleaned_data['reason']
+            reported_user = form.cleaned_data['reported_user']
+            from_email = form.cleaned_data['from_email']
+            message = form.cleaned_data['message']
+            try:
+                send_mail(reason, reported_user, from_email, ['lev_alk@hotmail.com'])
+                send_mail(reported_user, message, from_email, ['lev_alk@hotmail.com'])
+            except BadHeaderError:
+                return HttpResponse('Invalid header found.')
+            return redirect('success')
+    return render(request, "report.html", {'form': form})
+
+
+def informationpage(request):
+    a_informations = information_page.objects.all()
+    return render(request, 'informationpage.html', {'a_informations': a_informations})
+
+def emergencypage(request):
+    u_emers = emergency_page.objects.all()
+    return render(request, 'emergencypage.html', {'u_emers': u_emers })

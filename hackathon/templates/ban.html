@@ -1,6 +1,6 @@
 <h1>You're banned! This is a donation site and we prefer to keep certain
 behaviours away from it.
-<form action="{% url 'logoutuser' %}" method="POST">
+<form action="{% url 'logoutuser' %}" method="GET">
     {% csrf_token %}
 <button type="submit">Log Out</button>
 </form>

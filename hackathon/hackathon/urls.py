@@ -27,14 +27,35 @@ urlpatterns = [
     # path('home/', views.home, name='home'),
     path('banned/', views.ban, name='ban'),
     path('create/', views.createdonationcard, name='createdonationcard'),
+
+    # donation model
     path('donations/', views.donations, name='donations'),
     path('completeddonations/', views.completeddonations, name='completeddonations'),
     path('cardcreation/', views.cardcreation, name='cardcreation'),
+    path('completeddonations/<int:donation_pk>', views.viewcompleted, name='viewcompleted'),
     path('donations/<int:donation_pk>', views.viewdonation, name='viewdonation'),
-    path('completeddonations/<int:donation_pk>)', views.viewcompleted, name='viewcompleted'),
     path('donations/<int:donation_pk>/complete', views.completedonation, name='completedonation'),
     path('donations/<int:donation_pk>/delete', views.deletedonation, name='deletedonation'),
-    path('information/', views.information, name='information'),
-    path('officialbodies/', views.officialbodies, name='officialbodies'),
+
+    # request model
+    path('requests/', views.requests, name='requests'),
+    path('createrequest/', views.createrequest, name='createrequest'),
+    path('completedrequests/', views.completedrequests, name='completedrequests'),
+    path('completedrequests/<int:request_pk>', views.viewcompletedrequests, name='viewcompletedrequests'),
+    path('requests/<int:request_pk>', views.viewrequest, name='viewrequest'),
+    path('requests/<int:request_pk>/completereq', views.completerequest, name='completerequest'),
+    path('requests/<int:request_pk>/deletereq', views.deleterequest, name='deleterequest'),
+
+
+
+    path('generaldonations/', views.generaldonations, name='generaldonations'),
+    path('generalrequests/', views.generalrequests, name='generalrequests'),
+
+
+    path('contact/', views.contactView, name='contact'),
+    path('success/', views.successView, name='success'),
+    path('report/', views.reportView, name='report'),
+    path('informationpage/', views.informationpage, name='informationpage'),
+    path('emergencypage/', views.emergencypage, name='emergencypage'),
 
 ]

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 {% load static %}
 <!--
@@ -9,7 +10,7 @@ Licence URI: http://www.os-templates.com/template-terms
 -->
 <html>
 <head>
-<title>GoodNeighbour | Pages | DonationCard</title>
+<title>GoodNeighbour | Pages | MyDonations</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <link href="{% static 'layout/styles/layout.css' %}" rel="stylesheet" type="text/css" media="all">
@@ -64,6 +65,8 @@ Licence URI: http://www.os-templates.com/template-terms
   <!-- ################################################################################################ -->
   <div class="wrapper row2">
     <div id="breadcrumb" class="hoc clear">
+      <!-- ################################################################################################ -->
+      <!-- ################################################################################################ -->
     </div>
   </div>
   <!-- ################################################################################################ -->
@@ -77,24 +80,41 @@ Licence URI: http://www.os-templates.com/template-terms
     <!-- main body -->
     <!-- ################################################################################################ -->
       <!-- ################################################################################################ -->
-  <div class="btmspace-10 center">
-      <img src="{% static 'images/demo/kartis.png' %}" alt="Responsive image">
+
+   {% block content %}
+     <div class="btmspace-80 center">
+      <img src="{% static 'images/demo/bakashotsheli.png' %}" alt="Responsive image">
     </div>
-    <h2> {{ error }}</h2>
-    <form method="POST">
-    {% csrf_token %}
-    {{form.as_p}}
-      אזור בארץ
-      <select name="location">
-        <option value="1">צפון</option>
-        <option value="2">דרום</option>
-        <option value="3">מרכז</option>
-      </select>
-      <br>
-    <button type="submit">Confirm</button>
-    </form>
+    <div class="btmspace-80 right">
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-10">
+        {% if u_requests %}
+            <div class="list-group">
+                {% for u_request in u_requests %}
+                    <a href="{% url 'viewrequest' u_request.id %}" class="list-group-item list-group-item-action"><b>{{ u_request.title }}</b> </a>
+              <br>
+                {% endfor %}
+            </div>
+        {% else %}
+            <div class="text-center">
+                <h2>כרגע אין לך בקשות, לפתיחה לחץ כאן</h2>
+            <br>
+            <a role="button" class="btn btn-primary" href="{% url 'createrequest' %}">יצירת בקשה</a>
+            </div>
+        {% endif %}
+        </div>
+    </div>
+</div>
   </main>
 </div>
+      <footer class="mastfoot mt-auto">
+        <div class="inner">
+        </div>
+      </footer>
+
+
+{% endblock content %}
+
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
@@ -105,3 +125,8 @@ Licence URI: http://www.os-templates.com/template-terms
 <script src="{% static 'layout/scripts/jquery.mobilemenu.js' %}"></script>
 </body>
 </html>
+
+
+
+
+

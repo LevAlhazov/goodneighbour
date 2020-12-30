@@ -54,6 +54,21 @@ Licence URI: http://www.os-templates.com/template-terms
             </ul>
           </li>
 
+              {% if user.is_authenticated %}
+          {% ifequal user.groups.all.0.name "Receiver"%}
+          <li><a class="active" >אפשרויות</a>
+            {% endifequal %}
+            {% endif %}
+<!--             remember to add else -->
+            <ul>
+              <li><a href="requests/">הבקשות שלי</a></li>
+              <li><a href="createrequest/">צור בקשה</a></li>
+              <li><a href="{% url 'completedrequests' %}">תרומות שקיבלתי</a></li>
+              <li><a href="{% static 'pages/sidebar-right.html' %}">Sidebar Right</a></li>
+              <li><a href="{% static 'pages/basic-grid.html' %}">Basic Grid</a></li>
+            </ul>
+          </li>
+
 
 <!--          <li><a class="drop" href="#">Dropdown</a>-->
 <!--            <ul>-->
@@ -87,25 +102,34 @@ Licence URI: http://www.os-templates.com/template-terms
     <div class="flexslider basicslider">
       <ul class="slides">
         <li>
+
           <article>
             <p>תרומות</p>
             <h3 class="heading">לרשימת התרומות באתר</h3>
-            <footer><a class="btn" href="#">מעבר לתרומות</a></footer>
+            <footer><a class="btn" href="{% url 'generaldonations' %}">מעבר לתרומות</a></footer>
           </article>
         </li>
+
         <li>
           <article>
             <p>מידע</p>
             <h3 class="heading">דף מידע בנוגע לאתר </h3>
-            <footer><a class="btn" href="{% url 'information' %}">המשך למידע</a></footer>
+            <footer><a class="btn" href="{% url 'informationpage' %}">המשך למידע</a></footer>
           </article>
         </li>
         <li>
           <article>
             <p>רישמי</p>
-            <h3 class="heading">גורמים תרומה ועזרה רשמיים</h3>
+            <h3 class="heading">גורמי תרומה ועזרה רשמיים</h3>
             <p>ריכוז דרכי יצירת קשר למקורות רשמיים אשר מתעסקים בתמיכה נפשית ומתן תרומה</p>
-            <footer><a class="btn" href="{% url 'officialbodies' %}">מעבר לעמוד</a></footer>
+            <footer><a class="btn" href="{% url 'emergencypage' %}">מעבר לעמוד</a></footer>
+          </article>
+        </li>
+        <li>
+          <article>
+            <p>בקשות</p>
+            <h3 class="heading">בקשות התרומה באתר </h3>
+            <footer><a class="btn" href="{% url 'generalrequests' %}">מעבר לתרומות</a></footer>
           </article>
         </li>
       </ul>
@@ -123,26 +147,26 @@ Licence URI: http://www.os-templates.com/template-terms
     <!-- main body -->
     <!-- ################################################################################################ -->
     <div class="btmspace-80 center">
-      <h3 class="nospace">Dignissim dictum consequat</h3>
-      <p class="nospace">Erat in diam eu placerat purus est ac nisi integer sed rutrum dictum.</p>
+      <h1 class="nospace">אפשרויות נוספות</h1>
+      <p class="nospace">ליצירת קשר עם מנהלי האתר ודיווח על משתמשים</p>
     </div>
     <ul class="nospace group services">
       <li class="one_third first ">
         <article class="bgded overlay" style="background-image:url('{% static 'images/demo/button_back.png' %}');">
           <div class="txtwrap"><i class="block fa fa-4x fa-apple"></i>
-            <h6 class="heading">Ullamcorper</h6>
-            <p>Lacus eget nullam in ornare magna nam vitae volutpat justo tincidunt&hellip;</p>
+            <h6 class="heading">צור קשר</h6>
+            <p>צור קשר עם הנהלת האתר לכל מטרה שהיא</p>
           </div>
-          <footer><a href="#">More &raquo;</a></footer>
+          <footer><a href="{% url 'contact' %}">עוד &raquo;</a></footer>
         </article>
       </li>
       <li class="one_third">
         <article class="bgded overlay" style="background-image:url('{% static 'images/demo/button_back.png' %}');">
           <div class="txtwrap"><i class="block fa fa-4x fa-child"></i>
-            <h6 class="heading">Malesuada</h6>
-            <p>Lacus donec molestie sodales ut nunc felis malesuada quis semper fringilla&hellip;</p>
+            <h6 class="heading">דווח על משתמש</h6>
+            <p>דווח על משתמש שאינו פועל על פי נהלי האתר</p>
           </div>
-          <footer><a href="#">More &raquo;</a></footer>
+          <footer><a href="{% url 'report' %}">עוד &raquo;</a></footer>
         </article>
       </li>
       <li class="one_third">

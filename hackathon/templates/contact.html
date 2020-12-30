@@ -78,19 +78,12 @@ Licence URI: http://www.os-templates.com/template-terms
     <!-- ################################################################################################ -->
       <!-- ################################################################################################ -->
   <div class="btmspace-10 center">
-      <img src="{% static 'images/demo/kartis.png' %}" alt="Responsive image">
+      <img src="{% static 'images/demo/contact.png' %}" alt="Responsive image">
     </div>
     <h2> {{ error }}</h2>
     <form method="POST">
     {% csrf_token %}
     {{form.as_p}}
-      אזור בארץ
-      <select name="location">
-        <option value="1">צפון</option>
-        <option value="2">דרום</option>
-        <option value="3">מרכז</option>
-      </select>
-      <br>
     <button type="submit">Confirm</button>
     </form>
   </main>

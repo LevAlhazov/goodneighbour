@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 {% load static %}
 <!--
@@ -10,7 +9,7 @@ Licence URI: http://www.os-templates.com/template-terms
 -->
 <html>
 <head>
-<title>GoodNeighbour | Pages | CompletedDonationCard</title>
+<title>GoodNeighbour | Pages | DonationCard</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <link href="{% static 'layout/styles/layout.css' %}" rel="stylesheet" type="text/css" media="all">
@@ -26,12 +25,36 @@ Licence URI: http://www.os-templates.com/template-terms
     <header id="header" class="hoc clear">
       <!-- ################################################################################################ -->
       <div id="logo" class="fl_left">
-        <h1 style="color:gold"><a href="{% url 'index' %}">GoodNeighbour</a></h1>
+        <h1 style="color:gold"><a href="{% url 'index' %}">Good Neighbour</a></h1>
       </div>
       <nav id="mainav" class="fl_right">
         <ul class="clear">
-          <li><a href="{% url 'index' %}">עמוד הבית</a></li>
-
+          <li><a href="{% url 'index' %}">Home</a></li>
+          <li class="active"><a class="drop" href="#">Pages</a>
+            <ul>
+              <li><a href="gallery.html">Gallery</a></li>
+              <li class="active"><a href="full-width.html">Full Width</a></li>
+              <li><a href="sidebar-left.html">Sidebar Left</a></li>
+              <li><a href="sidebar-right.html">Sidebar Right</a></li>
+              <li><a href="basic-grid.html">Basic Grid</a></li>
+            </ul>
+          </li>
+          <li><a class="drop" href="#">Dropdown</a>
+            <ul>
+              <li><a href="#">Level 2</a></li>
+              <li><a class="drop" href="#">Level 2 + Drop</a>
+                <ul>
+                  <li><a href="#">Level 3</a></li>
+                  <li><a href="#">Level 3</a></li>
+                  <li><a href="#">Level 3</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Level 2</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Link Text</a></li>
+          <li><a href="#">Link Text</a></li>
+        </ul>
       </nav>
       <!-- ################################################################################################ -->
     </header>
@@ -41,8 +64,6 @@ Licence URI: http://www.os-templates.com/template-terms
   <!-- ################################################################################################ -->
   <div class="wrapper row2">
     <div id="breadcrumb" class="hoc clear">
-      <!-- ################################################################################################ -->
-      <!-- ################################################################################################ -->
     </div>
   </div>
   <!-- ################################################################################################ -->
@@ -56,48 +77,24 @@ Licence URI: http://www.os-templates.com/template-terms
     <!-- main body -->
     <!-- ################################################################################################ -->
       <!-- ################################################################################################ -->
-
-     <div class="btmspace-80 center">
-      <img src="{% static 'images/demo/info.png' %}" alt="Responsive image">
+  <div class="btmspace-10 center">
+      <img src="{% static 'images/demo/bakashattruma.png' %}" alt="Responsive image">
     </div>
-    <div class="btmspace-80 right">
-    <div class="row justify-content-center mt-5">
-        <div class="col-md-10">
-            <div class="text-center">
-                <h2>ברוכים הבאים לשכן הטוב, באתר זה ניתן לבקש תרומות של מוצרי צריכה בסיסים בקלות ובפרטיות  </h2>
-                <table class="table">
-  <thead>
-    <tr>
-      <th scope="col"></th>
-      <th scope="col">דגשים למשתמש החדש</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row"></th>
-      <td>מבקרים חדשים באתר - הרשמו כסוג המשתמש שישמש את מטרתכם דרך לחצן ההרשמה בראש העמוד</td>
-    </tr>
-    <tr>
-      <th scope="row"></th>
-      <td>לאחר ההרשמה בהתאם לבחירת סוג המשתמש תבקשו להתחבר דרך לחצן ההתחברות בראש העמוד</td>
-    </tr>
-    <tr>
-      <th scope="row"></th>
-      <td colspan="2"> אם בחרתם במשתמש תורם תוכלו לפתוח כרטיסי תרומה דרך עמודת האפשרויות אשר תופיע בראש העמוד ובאותה העמודה גם תוכלו לראות את בקשות המבקרים באתר</td>
-    </tr>
-    <tr>
-      <th scope="row"></th>
-      <td colspan="2"> בתור מבקש תרומה תופיע לכם עמודת אפשרויות אשר תאפשר לכם לפתוח בקשת תרומה ולגשת למאגר התרומות הזמינות באתר </td>
-    </tr>
-  </tbody>
-            <br>
-            </div>
-        </div>
-    </div>
-</div>
+    <h2> {{ error }}</h2>
+    <form method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+      אזור בארץ
+      <select name="location">
+        <option value="1">צפון</option>
+        <option value="2">דרום</option>
+        <option value="3">מרכז</option>
+      </select>
+      <br>
+    <button type="submit">Confirm</button>
+    </form>
   </main>
 </div>
-
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
@@ -108,8 +105,3 @@ Licence URI: http://www.os-templates.com/template-terms
 <script src="{% static 'layout/scripts/jquery.mobilemenu.js' %}"></script>
 </body>
 </html>
-
-
-
-
-

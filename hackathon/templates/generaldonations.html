@@ -10,7 +10,7 @@ Licence URI: http://www.os-templates.com/template-terms
 -->
 <html>
 <head>
-<title>GoodNeighbour | Pages | CompletedDonationCard</title>
+<title>GoodNeighbour | Pages | MyDonations</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <link href="{% static 'layout/styles/layout.css' %}" rel="stylesheet" type="text/css" media="all">
@@ -26,12 +26,36 @@ Licence URI: http://www.os-templates.com/template-terms
     <header id="header" class="hoc clear">
       <!-- ################################################################################################ -->
       <div id="logo" class="fl_left">
-        <h1 style="color:gold"><a href="{% url 'index' %}">GoodNeighbour</a></h1>
+        <h1 style="color:gold"><a href="{% url 'index' %}">Good Neighbour</a></h1>
       </div>
       <nav id="mainav" class="fl_right">
         <ul class="clear">
-          <li><a href="{% url 'index' %}">עמוד הבית</a></li>
-
+          <li><a href="{% url 'index' %}">Home</a></li>
+          <li class="active"><a class="drop" href="#">Pages</a>
+            <ul>
+              <li><a href="gallery.html">Gallery</a></li>
+              <li class="active"><a href="full-width.html">Full Width</a></li>
+              <li><a href="sidebar-left.html">Sidebar Left</a></li>
+              <li><a href="sidebar-right.html">Sidebar Right</a></li>
+              <li><a href="basic-grid.html">Basic Grid</a></li>
+            </ul>
+          </li>
+          <li><a class="drop" href="#">Dropdown</a>
+            <ul>
+              <li><a href="#">Level 2</a></li>
+              <li><a class="drop" href="#">Level 2 + Drop</a>
+                <ul>
+                  <li><a href="#">Level 3</a></li>
+                  <li><a href="#">Level 3</a></li>
+                  <li><a href="#">Level 3</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Level 2</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Link Text</a></li>
+          <li><a href="#">Link Text</a></li>
+        </ul>
       </nav>
       <!-- ################################################################################################ -->
     </header>
@@ -57,57 +81,63 @@ Licence URI: http://www.os-templates.com/template-terms
     <!-- ################################################################################################ -->
       <!-- ################################################################################################ -->
 
+   {% block content %}
      <div class="btmspace-80 center">
-      <img src="{% static 'images/demo/gormim.png' %}" alt="Responsive image">
+      <img src="{% static 'images/demo/tromot.png' %}" alt="Responsive image">
     </div>
     <div class="btmspace-80 right">
     <div class="row justify-content-center mt-5">
         <div class="col-md-10">
-            <div class="text-center">
-                <h2>  </h2>
-              <table class="table">
+        {% if u_donations %}
+            <div class="list-group">
+                {% for u_donation in u_donations %}
+                <table class="table">
   <thead>
     <tr>
-      <th scope="col">מספר ליצירת קשר</th>
-      <th scope="col">מייל</th>
-      <th scope="col">שם</th>
+
+      <th scope="col"></th>
+        <th scope="col">תורם</th>
+        <th scope="col">תיאור</th>
+        <th scope="col">כותרת</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th scope="row">*6833</th>
-      <td> latet@latet.org.il</td>
-      <td> עמותת לתת</td>
+
+        <td>לשליחת הודעה</td>
+      <td>{{u_donation.user}}</td>
+        <td>{{u_donation.content}}</td>
+        <td>{{u_donation.title}}</td>
+
     </tr>
     <tr>
-      <th scope="row">1-700-70-1201</th>
-      <td>eran1201@eran.org.il</td>
-      <td>עמותת ערן</td>
-    </tr>
-    <tr>
-      <th scope="row">03-6777777</th>
-      <td>info@naomi.org.il</td>
-        <td>חסדי נעמי</td>
-    </tr>
-    <tr>
-      <th scope="row">*3636</th>
-      <td>office@meir-panim.org.il</td>
-        <td>מאיר פנים</td>
-    </tr>
-    <tr>
-      <th scope="row">*6050</th>
-      <td></td>
-        <td>ביטוח לאומי</td>
+
     </tr>
   </tbody>
 </table>
-            <br>
+              <br>
+
+                {% endfor %}
             </div>
+        {% else %}
+            <div class="text-center">
+                <h2>כרגע אין לך כרטיסי תרומה, לפתיחה לחץ כאן</h2>
+            <br>
+            <a role="button" class="btn btn-primary" href="{% url 'createdonationcard' %}">פתח כרטיס תרומה</a>
+            </div>
+        {% endif %}
         </div>
     </div>
 </div>
   </main>
 </div>
+      <footer class="mastfoot mt-auto">
+        <div class="inner">
+        </div>
+      </footer>
+
+
+{% endblock content %}
 
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->

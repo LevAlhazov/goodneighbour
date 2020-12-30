@@ -1,3 +1,13 @@
+            <!--&lt;!&ndash; Latest compiled and minified CSS &ndash;&gt;-->
+<!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">-->
+
+<!--&lt;!&ndash; Optional theme &ndash;&gt;-->
+<!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css" integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">-->
+
+<!--&lt;!&ndash; Latest compiled and minified JavaScript &ndash;&gt;-->
+<!--<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>-->
+<!--<!DOCTYPE html>-->
+
 <!DOCTYPE html>
 {% load static %}
 <!--
@@ -9,7 +19,7 @@ Licence URI: http://www.os-templates.com/template-terms
 -->
 <html>
 <head>
-<title>GoodNeighbour | Pages | DonationCard</title>
+<title>GoodNeighbour | Pages | ViewCompleted</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <link href="{% static 'layout/styles/layout.css' %}" rel="stylesheet" type="text/css" media="all">
@@ -25,7 +35,7 @@ Licence URI: http://www.os-templates.com/template-terms
     <header id="header" class="hoc clear">
       <!-- ################################################################################################ -->
       <div id="logo" class="fl_left">
-        <h1 style="color:gold"><a href="{% url 'index' %}">Good Neighbour</a></h1>
+        <h1 style="color:gold"><a href="{% url 'index' %}">GoodNeighbour</a></h1>
       </div>
       <nav id="mainav" class="fl_right">
         <ul class="clear">
@@ -64,6 +74,9 @@ Licence URI: http://www.os-templates.com/template-terms
   <!-- ################################################################################################ -->
   <div class="wrapper row2">
     <div id="breadcrumb" class="hoc clear">
+      <!-- ################################################################################################ -->
+
+      <!-- ################################################################################################ -->
     </div>
   </div>
   <!-- ################################################################################################ -->
@@ -77,24 +90,24 @@ Licence URI: http://www.os-templates.com/template-terms
     <!-- main body -->
     <!-- ################################################################################################ -->
       <!-- ################################################################################################ -->
-  <div class="btmspace-10 center">
-      <img src="{% static 'images/demo/kartis.png' %}" alt="Responsive image">
+     {% block content %}
+    <div class="btmspace-80 center">
+    <img src="{% static 'images/demo/trumot.png' %}" alt="Responsive image">
     </div>
-    <h2> {{ error }}</h2>
-    <form method="POST">
+
+{{ error }}
+{{u_requests.title}}
+<form method="POST">
     {% csrf_token %}
     {{form.as_p}}
-      אזור בארץ
-      <select name="location">
-        <option value="1">צפון</option>
-        <option value="2">דרום</option>
-        <option value="3">מרכז</option>
-      </select>
-      <br>
-    <button type="submit">Confirm</button>
-    </form>
+</form>
+      <li><a href="{% url 'completedrequests' %}" >Return to Completed</a></li>
   </main>
 </div>
+
+
+{% endblock %}
+
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
@@ -105,3 +118,7 @@ Licence URI: http://www.os-templates.com/template-terms
 <script src="{% static 'layout/scripts/jquery.mobilemenu.js' %}"></script>
 </body>
 </html>
+
+
+
+
