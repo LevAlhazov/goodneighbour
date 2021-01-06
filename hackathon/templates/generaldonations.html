@@ -88,6 +88,18 @@ Licence URI: http://www.os-templates.com/template-terms
     <div class="btmspace-80 right">
     <div class="row justify-content-center mt-5">
         <div class="col-md-10">
+            <div class="card">
+  <div class="card-header">
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">מיין על פי אזור בארץ</h5>
+    <a href="{% url 'splitbylocation' 'דרום הארץ' %}" class="btn btn-primary">דרום</a>
+      <a href="{% url 'splitbylocation' 'צפון הארץ' %}" class="btn btn-primary">צפון</a>
+      <a href="{% url 'splitbylocation' 'מרכז הארץ' %}" class="btn btn-primary">מרכז</a>
+  </div>
+</div>
+            <br>
+
         {% if u_donations %}
             <div class="list-group">
                 {% for u_donation in u_donations %}
@@ -105,7 +117,11 @@ Licence URI: http://www.os-templates.com/template-terms
     <tr>
 
         <td>לשליחת הודעה</td>
-      <td>{{u_donation.user}}</td>
+        {% if u_donation.user.profile_description.id %}
+      <td> <a href="{% url 'viewprofile' u_donation.user.profile_description.id %}">מעבר לפרופיל </a> {{u_donation.user}} </td>
+        {% else %}
+        <td>למשתמש אין פרופיל זמין {{u_donation.user}}</td>
+        {% endif %}
         <td>{{u_donation.content}}</td>
         <td>{{u_donation.title}}</td>
 

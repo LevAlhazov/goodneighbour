@@ -17,6 +17,10 @@ def main():
         ) from exc
     execute_from_command_line(sys.argv)
 
+EMAIL_USE_TLS = True
+
+
+EMAIL_USE_SSL = True
 
 if __name__ == '__main__':
     main()

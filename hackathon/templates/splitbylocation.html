@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 {% load static %}
 <!--
@@ -9,7 +10,7 @@ Licence URI: http://www.os-templates.com/template-terms
 -->
 <html>
 <head>
-<title>GoodNeighbour | Pages | DonationCard</title>
+<title>GoodNeighbour | Pages | MyDonations</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <link href="{% static 'layout/styles/layout.css' %}" rel="stylesheet" type="text/css" media="all">
@@ -64,6 +65,8 @@ Licence URI: http://www.os-templates.com/template-terms
   <!-- ################################################################################################ -->
   <div class="wrapper row2">
     <div id="breadcrumb" class="hoc clear">
+      <!-- ################################################################################################ -->
+      <!-- ################################################################################################ -->
     </div>
   </div>
   <!-- ################################################################################################ -->
@@ -77,18 +80,57 @@ Licence URI: http://www.os-templates.com/template-terms
     <!-- main body -->
     <!-- ################################################################################################ -->
       <!-- ################################################################################################ -->
-  <div class="btmspace-10 center">
-      <img src="{% static 'images/demo/kartis.png' %}" alt="Responsive image">
+
+   {% block content %}
+     <div class="btmspace-80 center">
+      <img src="{% static 'images/demo/tromot.png' %}" alt="Responsive image">
     </div>
-    <h2> {{ error }}</h2>
-    <form method="POST">
-    {% csrf_token %}
-    {{form.as_p}}
-      <br>
-    <button type="submit">Confirm</button>
-    </form>
+    <div class="btmspace-80 right">
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-10">
+            <div class="list-group">
+                {% for cat_lists in cat_list %}
+                <table class="table">
+  <thead>
+    <tr>
+
+      <th scope="col"></th>
+        <th scope="col">תורם</th>
+        <th scope="col">תיאור</th>
+        <th scope="col">כותרת</th>
+      <th scope="col">מיקום</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+        <td>לשליחת הודעה</td>
+      <td>{{cat_lists.user}}</td>
+        <td>{{cat_lists.content}}</td>
+        <td>{{cat_lists.title}}</td>
+      <td>{{cat_lists.location}}</td>
+
+    </tr>
+    <tr>
+
+    </tr>
+  </tbody>
+</table>
+              <br>
+
+                {% endfor %}
+            </div>
+</div>
   </main>
 </div>
+      <footer class="mastfoot mt-auto">
+        <div class="inner">
+        </div>
+      </footer>
+
+
+{% endblock content %}
+
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
@@ -99,3 +141,8 @@ Licence URI: http://www.os-templates.com/template-terms
 <script src="{% static 'layout/scripts/jquery.mobilemenu.js' %}"></script>
 </body>
 </html>
+
+
+
+
+

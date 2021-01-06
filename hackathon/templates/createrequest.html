@@ -84,12 +84,6 @@ Licence URI: http://www.os-templates.com/template-terms
     <form method="POST">
     {% csrf_token %}
     {{form.as_p}}
-      אזור בארץ
-      <select name="location">
-        <option value="1">צפון</option>
-        <option value="2">דרום</option>
-        <option value="3">מרכז</option>
-      </select>
       <br>
     <button type="submit">Confirm</button>
     </form>

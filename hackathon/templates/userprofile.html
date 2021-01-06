@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 {% load static %}
 <!--
@@ -9,7 +10,7 @@ Licence URI: http://www.os-templates.com/template-terms
 -->
 <html>
 <head>
-<title>GoodNeighbour | Pages | DonationCard</title>
+<title>GoodNeighbour | Pages | MyDonations</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <link href="{% static 'layout/styles/layout.css' %}" rel="stylesheet" type="text/css" media="all">
@@ -64,6 +65,8 @@ Licence URI: http://www.os-templates.com/template-terms
   <!-- ################################################################################################ -->
   <div class="wrapper row2">
     <div id="breadcrumb" class="hoc clear">
+      <!-- ################################################################################################ -->
+      <!-- ################################################################################################ -->
     </div>
   </div>
   <!-- ################################################################################################ -->
@@ -77,18 +80,36 @@ Licence URI: http://www.os-templates.com/template-terms
     <!-- main body -->
     <!-- ################################################################################################ -->
       <!-- ################################################################################################ -->
-  <div class="btmspace-10 center">
-      <img src="{% static 'images/demo/kartis.png' %}" alt="Responsive image">
-    </div>
-    <h2> {{ error }}</h2>
-    <form method="POST">
-    {% csrf_token %}
-    {{form.as_p}}
-      <br>
-    <button type="submit">Confirm</button>
-    </form>
-  </main>
-</div>
+      {% block content %}
+  <div>
+
+    {{current_user}}'s
+    <div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">Profile page</h5>
+    <p class="card-text">{{current_user.profile_description.description}}</p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">First Name: {{current_user.profile_description.first_name}}</li>
+    <li class="list-group-item">Last Name:{{current_user.profile_description.last_name}} </li>
+    <li class="list-group-item">Email:{{current_user.email}}</li>
+    <li class="list-group-item">Location:{{current_user.profile_description.location}}</li>
+  </ul>
+  <div class="card-body">
+    <br>
+    <a href="{% url 'edituserprofile' %}" class="btn btn-primary btn-lg disabled" tabindex="-1" role="button" aria-disabled="true">עריכת פרטי הרשמה</a>
+    <br>
+    <br>
+    {% if user.profile_description.id %}
+    <a href="{% url 'edit_profile_data' %}" class="btn btn-primary btn-lg disabled" tabindex="-1" role="button" aria-disabled="true">עריכת פרטים אישיים</a>
+    {% else %}
+    <a href="{% url 'create_profile' %}" class="btn btn-primary btn-lg disabled" tabindex="-1" role="button" aria-disabled="true">הגדר פרטים אישיים</a>
+    {% endif %}
+
+  </div>
+
+    {% endblock content %}
+
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
@@ -99,3 +120,8 @@ Licence URI: http://www.os-templates.com/template-terms
 <script src="{% static 'layout/scripts/jquery.mobilemenu.js' %}"></script>
 </body>
 </html>
+
+
+
+
+

@@ -16,10 +16,17 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from G_neighbour import views
+from G_neighbour.views import *
+from django.views.generic.base import RedirectView
+from django.urls import reverse_lazy
+
+
+
 
 urlpatterns = [
     path('', include('G_neighbour.urls')),
-    path('admin/', admin.site.urls),
+    path('admin/', admin.site.urls, name='admin'),
+    path('', RedirectView.as_view(url=reverse_lazy('admin:index'))),
     # Auth
     path('signup/', views.signupuser, name='signupuser'),
     path('logout/', views.logoutuser, name='logoutuser'),
@@ -47,15 +54,26 @@ urlpatterns = [
     path('requests/<int:request_pk>/deletereq', views.deleterequest, name='deleterequest'),
 
 
-
+    # display
     path('generaldonations/', views.generaldonations, name='generaldonations'),
     path('generalrequests/', views.generalrequests, name='generalrequests'),
+    path('splitbylocation/<str:cat_pk>/', views.splitbylocation, name='splitbylocation'),
 
-
+    # information and contact
     path('contact/', views.contactView, name='contact'),
     path('success/', views.successView, name='success'),
     path('report/', views.reportView, name='report'),
     path('informationpage/', views.informationpage, name='informationpage'),
     path('emergencypage/', views.emergencypage, name='emergencypage'),
+
+    # profile and messaging
+    path('userprofile/', views.userprofile, name='userprofile'),
+    path('edituserprofile/', views.edituserprofile, name='edituserprofile'),
+    path('userdata/', views.edituserdata, name='edit_profile_data'),
+    path('createprofile/',views.createprofile, name='create_profile'),
+    path('userprofile/<int:request_pk>', views.viewprofile, name='viewprofile'),
+
+    # admin data
+    path('adminViewCompletedDonations/', views.adminViewCompletedDonations, name='adminViewCompletedDonations')
 
 ]

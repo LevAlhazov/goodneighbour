@@ -3,13 +3,14 @@ from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.models import User
 from django.db import IntegrityError
 from django.contrib.auth import login, logout, authenticate
-from .forms import DonationCardForm, CreateUserForm, CreateRequestForm, ContactForm, ReportForm
+from .forms import *
 from .models import *
 from .decorators import unauthenticated_user, allowed_user
 from django.contrib.auth.models import Group
 from django.utils import timezone
 from django.http import HttpResponse, HttpResponseRedirect
 from django.core.mail import send_mail, BadHeaderError
+from django.views.generic import DetailView
 from django.contrib.auth import get_user_model
 from django.contrib.auth.decorators import login_required
 from django import template
@@ -43,7 +44,7 @@ def signupuser(request):
     else:
         if request.POST['password1'] == request.POST['password2']:
             try:
-                user = User.objects.create_user(request.POST['username'], password=request.POST['password1'])
+                user = User.objects.create_user(request.POST['username'], email=request.POST['email'], password=request.POST['password1'])
                 user.save()
                 given_type = int(request.POST.get('usertype'))
                 if given_type == 1:
@@ -127,7 +128,7 @@ def viewdonation(request, donation_pk):
             return render(request, 'viewdonation.html', {'u_donation': u_donation, 'form': form, 'error': 'Bad entry'})
 
 
-@allowed_user(allowed_roles=["Donators"])
+@allowed_user(allowed_roles=["Donators", "Admin"])
 def viewcompleted(request, donation_pk):
     u_donation = get_object_or_404(donation_card, pk=donation_pk)
     if request.method == 'GET':
@@ -142,6 +143,7 @@ def viewcompleted(request, donation_pk):
             return render(request, 'viewcompleted.html', {'u_donation': u_donation, 'form': form, 'error': 'Bad entry'})
 
 
+
 @allowed_user(allowed_roles=["Donators"])
 def completedonation(request, donation_pk):
     u_donation = get_object_or_404(donation_card, pk=donation_pk, user=request.user)
@@ -149,6 +151,11 @@ def completedonation(request, donation_pk):
         u_donation.datecompleted = timezone.now()
         u_donation.save()
         return redirect('donations')
+
+
+def adminViewCompletedDonations(request):
+    u_donations = donation_card.objects.filter(datecompleted__isnull=False)
+    return render(request, 'adminViewCompletedDonations.html', {'u_donations': u_donations})
 
 
 @allowed_user(allowed_roles=["Donators"])
@@ -178,6 +185,7 @@ def createrequest(request):
 def completedrequests(request):
     u_requests = request_card.objects.filter(user=request.user, datecompleted__isnull=False)
     return render(request, 'completedrequests.html', {'u_requests': u_requests})
+
 
 @allowed_user(allowed_roles=["Receiver"])
 def viewcompletedrequests(request, request_pk):
@@ -237,6 +245,19 @@ def generaldonations(request):
     return render(request, 'generaldonations.html', {'u_donations': u_donations })
 
 
+def splitbylocation(request, cat_pk):
+    u_donations = donation_card.objects.all()
+    print(u_donations)
+    category = get_object_or_404(location_model, location=cat_pk)
+    cat_list = []
+    for u_donation in u_donations:
+        if u_donation.location == category:
+            cat_list.append(u_donation)
+    return render(request, 'splitbylocation.html', {'cat_list': cat_list})
+
+
+
+
 def generalrequests(request):
     u_requests = request_card.objects.all()
     return render(request, 'generalrequests.html', {'u_requests': u_requests })
@@ -286,6 +307,67 @@ def informationpage(request):
     a_informations = information_page.objects.all()
     return render(request, 'informationpage.html', {'a_informations': a_informations})
 
+
 def emergencypage(request):
     u_emers = emergency_page.objects.all()
     return render(request, 'emergencypage.html', {'u_emers': u_emers })
+
+
+def userprofile(request):
+    current_user = request.user
+    return render(request, 'userprofile.html', {'current_user': current_user})
+
+
+def edituserprofile(request):
+    current_user = request.user
+    if request.method == 'GET':
+        form = CreateUserForm(instance=current_user)
+        return render(request, 'edituserprofile.html', {'current_user': current_user, 'form': form})
+    else:
+        try:
+            form = CreateUserForm(request.POST, instance=current_user)
+            form.save()
+            return redirect('userprofile')
+        except ValueError:
+            return render(request, 'userprofile.html',
+                          {'current_user': current_user, 'form': form, 'error': 'Bad entry'})
+
+
+def edituserdata(request):
+    current_user = request.user
+    if request.method == 'GET':
+        form = EditProfileForm(instance=current_user)
+        return render(request, 'userdata.html', {'current_user': current_user, 'form': form})
+    else:
+        try:
+            form = EditProfileForm(request.POST, instance=current_user)
+            form.save()
+            return redirect('userprofile')
+        except ValueError:
+            return render(request, 'userprofile.html',
+                          {'current_user': current_user, 'form': form, 'error': 'Bad entry'})
+
+
+def createprofile(request):
+    if request.method == 'GET':
+        return render(request, 'createuserprofile.html', {'form': EditProfileForm()})
+    else:
+        try:
+            form = EditProfileForm(request.POST)
+            newcard = form.save(commit=False)
+            newcard.user = request.user
+            newcard.save()
+            return redirect('userprofile')
+        except ValueError:
+            return render(request, 'createuserprofile.html', {'form': EditProfileForm(), 'error': 'Bad Data entered'})
+
+
+def viewprofile(request, request_pk):
+    u_request = get_object_or_404(profile_description, pk=request_pk)
+    if request.method == 'GET':
+        return render(request, 'viewprofile.html', {'u_request': u_request})
+    else:
+        try:
+            return redirect('donations')
+        except ValueError:
+            return render(request, 'viewprofile.html', {'u_request': u_request})

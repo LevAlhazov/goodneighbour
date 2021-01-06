@@ -39,6 +39,19 @@ Licence URI: http://www.os-templates.com/template-terms
       <nav id="mainav" class="fl_right">
         <ul class="clear">
           <li class=""><a href="{% url 'index' %}">עמוד הבית</a></li>
+
+          {% if request.user.is_superuser %}
+          <li class=""><a href="{% url 'admin:index' %}">אפשרויות מנהל</a></li>
+          <li><a class="active" >דוחות מנהל</a>
+
+<!--             remember to add else -->
+            <ul>
+              <li><a href="adminViewCompletedDonations/">תרומות שהושלמו באתר</a></li>
+              <li><a href="/admin/ban/usersban/">משתמשים חסומים</a></li>
+              <li><a href="admin/auth/user/">משתמשים רשומים</a></li>
+            </ul>
+          </li>
+          {% endif %}
           {% if user.is_authenticated %}
           {% ifequal user.groups.all.0.name "Donators"%}
           <li><a class="active" >אפשרויות</a>
@@ -49,12 +62,11 @@ Licence URI: http://www.os-templates.com/template-terms
               <li><a href="donations/">כרטיסי התרומה שלי</a></li>
               <li><a href="create/">פתח כרטיס</a></li>
               <li><a href="{% url 'completeddonations' %}">כרטיסים שהושלמו</a></li>
-              <li><a href="{% static 'pages/sidebar-right.html' %}">Sidebar Right</a></li>
-              <li><a href="{% static 'pages/basic-grid.html' %}">Basic Grid</a></li>
             </ul>
           </li>
 
               {% if user.is_authenticated %}
+          <li><a href="{% url 'userprofile' %}">הפרופיל שלי</a></li>
           {% ifequal user.groups.all.0.name "Receiver"%}
           <li><a class="active" >אפשרויות</a>
             {% endifequal %}
