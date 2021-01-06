@@ -16,6 +16,7 @@ from django.contrib.auth.decorators import login_required
 from django import template
 
 
+
 # Create your views here.
 def index(request):
     return render(request, 'index.html')
@@ -247,7 +248,6 @@ def generaldonations(request):
 
 def splitbylocation(request, cat_pk):
     u_donations = donation_card.objects.all()
-    print(u_donations)
     category = get_object_or_404(location_model, location=cat_pk)
     cat_list = []
     for u_donation in u_donations:
@@ -371,3 +371,155 @@ def viewprofile(request, request_pk):
             return redirect('donations')
         except ValueError:
             return render(request, 'viewprofile.html', {'u_request': u_request})
+
+
+def rateuser(request,user_pk):
+    user2 = get_object_or_404(User, pk=user_pk)
+    ratings = user_rating.objects.all()
+    count = 0
+    sum = 0
+    rating_average = 0
+    user_comment = []
+    for z in ratings:
+        if z.user.id == user2.id:
+            user_comment.append(z.comment)
+
+    for x in ratings:
+        if x.user.id == user2.id:
+            sum = sum + x.rating
+            count +=1
+    if count != 0:
+        rating_average = sum / count
+
+    user_counter=0
+    for y in ratings:
+        if y.user.id == user2.id:
+            user_counter +=1
+    if user_counter > 1:
+        return render(request, 'rateuser.html', {'rating_average':rating_average, 'user_comment':user_comment})
+    user_tracker = request.user
+    if user2 == user_tracker:
+        return render(request, 'rateuser.html', {'rating_average': rating_average, 'user_comment': user_comment})
+    else:
+        form = RateForm()
+        if request.method == 'POST':
+            form.user = user2
+            form = RateForm(request.POST)
+            if form.is_valid():
+                newrate = form.save(commit=False)
+                newrate.user = user2
+                newrate.save()
+                return redirect('index')
+    return render(request, 'rateuser.html', {'form':form, 'rating_average':rating_average, 'user_comment':user_comment})
+
+
+
+def sendmessage(request,user_pk):
+    user = request.user
+    user2 = get_object_or_404(User, pk=user_pk)
+    form = SendMessage()
+    if request.method == 'POST':
+        form.sender = user
+        form.receiver = user2
+        form = SendMessage(request.POST)
+        if form.is_valid():
+            new_msg = form.save(commit=False)
+            new_msg.receiver = user2
+            new_msg.sender = user
+            new_msg.save()
+            return redirect('index')
+    return render(request, 'sendmessage.html',{'form': form})
+
+
+def mymessages(request):
+    user = request.user
+    u_messages = private_message.objects.all()
+    message_list = []
+    for x in u_messages:
+        if x.receiver == user:
+            message_list.append(x)
+    return render(request, 'mymessages.html', {'message_list': message_list})
+
+
+def sentmessages(request):
+    user = request.user
+    u_messages = private_message.objects.all()
+    message_list = []
+    for x in u_messages:
+        if x.sender == user:
+            message_list.append(x)
+    return render(request, 'sentmessages.html', {'message_list': message_list})
+
+
+def conversation(request, user_pk):
+    user1 = request.user
+    u_messages = private_message.objects.filter(receiver=user1)
+    user2 = get_object_or_404(User, pk=user_pk)
+    message_list=[]
+    for x in u_messages:
+        if x.sender == user2:
+            message_list.append(x)
+    return render(request, 'conversation.html', {'message_list': message_list})
+
+
+def myrating(request):
+    current_user = request.user
+    ratings = user_rating.objects.all()
+    all_users = User.objects.filter(groups__name__in=['Donators'])
+    count = 0
+    sum = 0
+    rating_average = 0
+    for x in ratings:
+        if x.user.id == current_user.id:
+            sum = sum + x.rating
+            count += 1
+    if count != 0:
+        rating_average = sum / count
+    your_rating= 0
+    avg_list = {}
+    for y in all_users:
+        count = 0
+        user_sum = 0
+        for z in ratings:
+            if y.id == z.user.id and current_user.id != y.id:
+                user_sum += z.rating
+                count += 1
+        if count!=0:
+            avg_list[y] = user_sum/count
+    for x in avg_list.values():
+        if x > rating_average:
+            your_rating += 1
+    your_rating+=1
+    sorted_dict = {}
+    sorted_keys = sorted(avg_list, key=avg_list.get)
+    for w in sorted_keys:
+        sorted_dict[w] = avg_list[w]
+    sorted_dict = sorted_dict.items()
+    sorted_dict = tuple(sorted_dict)
+    return render(request, 'myrating.html', {'your_rating': your_rating, 'rating_average': rating_average,
+                                             'avg_list': sorted_dict})
+
+@allowed_user(allowed_roles=["Receiver"])
+
+def ratingforreceivers(request):
+    ratings = user_rating.objects.all()
+    all_users = User.objects.filter(groups__name__in=['Donators'])
+    avg_list={}
+    for y in all_users:
+        count = 0
+        user_sum = 0
+        for z in ratings:
+            if y.id == z.user.id:
+                user_sum += z.rating
+                count += 1
+        if count!=0:
+            avg_list[y] = user_sum/count
+    sorted_dict = {}
+    sorted_keys = sorted(avg_list, key=avg_list.get)
+    for w in sorted_keys:
+        sorted_dict[w] = avg_list[w]
+    sorted_dict = sorted_dict.items()
+    sorted_dict = tuple(sorted_dict)
+    print(sorted_keys)
+
+    return render(request, 'ratingforreceivers.html', {'avg_list': sorted_dict , 'name_list': sorted_keys})

@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'G_neighbour',
     'ban',
+
 ]
 
 MIDDLEWARE = [
@@ -131,3 +132,4 @@ EMAIL_PORT = 587 # new
 EMAIL_USE_TLS = True # new
 SENDGRID_SANDBOX_MODE_IN_DEBUG=False
 SENDGRID_ECHO_TO_STDOUT=False
+

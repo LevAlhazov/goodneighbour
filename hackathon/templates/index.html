@@ -39,7 +39,8 @@ Licence URI: http://www.os-templates.com/template-terms
       <nav id="mainav" class="fl_right">
         <ul class="clear">
           <li class=""><a href="{% url 'index' %}">עמוד הבית</a></li>
-
+          <li class=""><a href="{% url 'mymessages' %}">ההודעות שלי</a></li>
+          <li class=""><a href="{% url 'sentmessages' %}">ההודעות ששלחתי</a></li>
           {% if request.user.is_superuser %}
           <li class=""><a href="{% url 'admin:index' %}">אפשרויות מנהל</a></li>
           <li><a class="active" >דוחות מנהל</a>
@@ -54,6 +55,7 @@ Licence URI: http://www.os-templates.com/template-terms
           {% endif %}
           {% if user.is_authenticated %}
           {% ifequal user.groups.all.0.name "Donators"%}
+          <li><a href="{% url 'userprofile' %}">הפרופיל שלי</a></li>
           <li><a class="active" >אפשרויות</a>
             {% endifequal %}
             {% endif %}
@@ -66,8 +68,8 @@ Licence URI: http://www.os-templates.com/template-terms
           </li>
 
               {% if user.is_authenticated %}
-          <li><a href="{% url 'userprofile' %}">הפרופיל שלי</a></li>
           {% ifequal user.groups.all.0.name "Receiver"%}
+          <li><a href="{% url 'ratingforreceivers' %}">דירוג התורמים באתר</a></li>
           <li><a class="active" >אפשרויות</a>
             {% endifequal %}
             {% endif %}

@@ -72,6 +72,17 @@ urlpatterns = [
     path('userdata/', views.edituserdata, name='edit_profile_data'),
     path('createprofile/',views.createprofile, name='create_profile'),
     path('userprofile/<int:request_pk>', views.viewprofile, name='viewprofile'),
+    path('sendmessage/<int:user_pk>', views.sendmessage, name='sendmessage'),
+    path('mymessages/', views.mymessages, name='mymessages'),
+    path('sentmessages/', views.sentmessages, name='sentmessages'),
+    path('conversation/<int:user_pk>', views.conversation, name='conversation'),
+
+
+    #rating and comments
+    path('rateuser/<int:user_pk>', views.rateuser, name='rateuser'),
+    path('myrating/', views.myrating, name='myrating'),
+    path('ratingforreceivers/', views.ratingforreceivers, name='ratingforreceivers'),
+
 
     # admin data
     path('adminViewCompletedDonations/', views.adminViewCompletedDonations, name='adminViewCompletedDonations')

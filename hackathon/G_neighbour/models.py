@@ -71,3 +71,18 @@ class profile_description(models.Model):
 
     def __str__(self):
         return str(self.user)
+
+
+class user_rating(models.Model):
+    rate = ((1,'1'),(2,'2'),(3,'3'),(4,'4'),(5,'5'))
+    user = models.ForeignKey(User, null=True, on_delete=models.CASCADE)
+    rating = models.PositiveSmallIntegerField(choices=rate)
+    comment = models.TextField(max_length=255)
+
+
+class private_message(models.Model):
+    sender = models.ForeignKey(User, related_name="sender", on_delete=models.CASCADE)
+    receiver = models.ForeignKey(User, related_name="receiver", on_delete=models.CASCADE)
+    content = models.TextField(max_length=255)
+    title = models.CharField(max_length=150, default="new message")
+    created_at = models.DateTimeField(auto_now_add=True)

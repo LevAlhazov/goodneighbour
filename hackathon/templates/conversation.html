@@ -1,0 +1,18 @@
+{% block content %}
+<h1> Testing conversation </h1>
+
+{% for x in message_list %}
+{{x.created_at}}
+<br>
+{{x.content}}
+<br>
+<br>
+<td> <a href="{% url 'sendmessage' x.sender.id %}">השב</a></td>
+<br>
+<br>
+{% endfor %}
+
+
+{% endblock %}
+
+

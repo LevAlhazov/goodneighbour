@@ -1,0 +1,24 @@
+{% block content %}
+<h1> Testing mymessage </h1>
+
+
+
+{% for x in message_list %}
+{{x.created_at}}
+<br>
+<br>
+{{x.title}}
+<br>
+{{x.content}}
+<br>
+<td> <a href="{% url 'sendmessage' x.receiver.id %}">שלח עוד</a></td>
+<br>
+<br>
+<br>
+<br>
+{% endfor %}
+
+
+{% endblock %}
+
+

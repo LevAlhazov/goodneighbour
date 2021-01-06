@@ -89,54 +89,24 @@ Licence URI: http://www.os-templates.com/template-terms
     <div class="row justify-content-center mt-5">
         <div class="col-md-10">
             <div class="card">
-  <div class="card-header">
-  </div>
-  <div class="card-body">
-    <h5 class="card-title">מיין על פי אזור בארץ</h5>
-    <a href="{% url 'splitbylocation' 'דרום הארץ' %}" class="btn btn-primary">דרום</a>
-      <a href="{% url 'splitbylocation' 'צפון הארץ' %}" class="btn btn-primary">צפון</a>
-      <a href="{% url 'splitbylocation' 'מרכז הארץ' %}" class="btn btn-primary">מרכז</a>
-  </div>
-</div>
-            <br>
+ <h1>{{rating_average}}</h1>
+{% for x in user_comment %}
+Comment:
+{{x}}
+<br>
+{% endfor %}
 
-        {% if u_donations %}
-            <div class="list-group">
-                {% for u_donation in u_donations %}
-                <table class="table">
-  <thead>
-    <tr>
+<form action="" method="post">
 
-      <th scope="col"></th>
-        <th scope="col">תורם</th>
-        <th scope="col">תיאור</th>
-        <th scope="col">כותרת</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
+        {% csrf_token %}
+    {% if form %}
+        {{form}}
+    <button class="btn" type="submit">דרג</button>
+    {% endif %}
+</form>
 
-        <td> <a href="{% url 'sendmessage' u_donation.user.id %}">לשליחת הודעה </a> </td>
-        {% if u_donation.user.profile_description.id %}
-      <td> <a href="{% url 'viewprofile' u_donation.user.profile_description.id %}">מעבר לפרופיל </a> {{u_donation.user}} </td>
-        {% else %}
-        <td>למשתמש אין פרופיל זמין {{u_donation.user}}</td>
-        {% endif %}
-        <td>{{u_donation.content}}</td>
-        <td>{{u_donation.title}}</td>
 
-    </tr>
-    <tr>
-
-    </tr>
-  </tbody>
-</table>
-              <br>
-
-                {% endfor %}
             </div>
-        {% else %}
-        {% endif %}
         </div>
     </div>
 </div>
@@ -160,6 +130,11 @@ Licence URI: http://www.os-templates.com/template-terms
 <script src="{% static 'layout/scripts/jquery.mobilemenu.js' %}"></script>
 </body>
 </html>
+
+
+
+
+
 
 
 

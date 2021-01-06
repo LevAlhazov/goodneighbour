@@ -50,3 +50,16 @@ class EmergencyPage(forms.Form):
     class Meta:
         model = emergency_page
         fields = ['name', 'email', 'number']
+
+
+class RateForm(forms.ModelForm):
+    class Meta:
+        model = user_rating
+        fields = ['rating', 'comment']
+
+
+class SendMessage(forms.ModelForm):
+    class Meta:
+        model = private_message
+        fields = ['title','content']
+

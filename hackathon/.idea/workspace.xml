@@ -23,38 +23,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eb8447e4-c555-4381-b69e-ce004fe8d2eb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/adminViewCompletedDonations.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/createuserprofile.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/edituserprofile.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/publicprofile.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/splitbylocation.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/userdata.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/userprofile.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/viewprofile.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/conversation.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/mymessages.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/myrating.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/rateuser.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/ratingforreceivers.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/sendmessage.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/sentmessages.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/hackathon.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/hackathon.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/G_neighbour/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/G_neighbour/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/G_neighbour/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/G_neighbour/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/G_neighbour/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/G_neighbour/migrations/0002_auto_20201129_2016.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/G_neighbour/migrations/0003_donator_receiver_user.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/G_neighbour/migrations/0004_auto_20201130_1356.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/G_neighbour/migrations/0005_auto_20201130_2152.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/G_neighbour/migrations/0006_request_card.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/G_neighbour/migrations/0007_information_page.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/G_neighbour/migrations/0008_emergency_page.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/G_neighbour/migrations/0009_auto_20201230_1833.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/G_neighbour/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/G_neighbour/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/G_neighbour/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/G_neighbour/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hackathon/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/hackathon/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hackathon/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/hackathon/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manage.py" beforeDir="false" afterPath="$PROJECT_DIR$/manage.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/createdonationcard.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/createdonationcard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/createrequest.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/createrequest.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/generaldonations.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/generaldonations.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/generalrequests.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/generalrequests.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/viewcompleted.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/viewcompleted.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/informationpage.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/informationpage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/viewprofile.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/viewprofile.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -139,7 +128,6 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="JavaScript Debug.index.html" />
       <item itemvalue="Python.manage" />
       <item itemvalue="Python.urls" />
     </list>
@@ -170,6 +158,10 @@
       <workItem from="1607867894280" duration="16965000" />
       <workItem from="1609860573971" duration="5362000" />
       <workItem from="1609867073749" duration="8000" />
+      <workItem from="1609925225636" duration="7555000" />
+      <workItem from="1609932957092" duration="77000" />
+      <workItem from="1609933106685" duration="11351000" />
+      <workItem from="1609944975247" duration="12512000" />
     </task>
     <servers />
   </component>
@@ -193,35 +185,37 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1607851822608" />
-    <state x="704" y="322" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1606750196745">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="2624" y="322" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1609946792985">
+      <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="704" y="322" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/-1920.-2.1920.1040@0.0.1920.1040" timestamp="1606750196745" />
-    <state x="1174" y="239" key="FileChooserDialogImpl" timestamp="1607853708450">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="2624" y="322" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1609946792985" />
+    <state x="945" y="155" key="FileChooserDialogImpl" timestamp="1609957819022">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="1174" y="239" key="FileChooserDialogImpl/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1607853708450" />
+    <state x="-739" y="196" key="FileChooserDialogImpl/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1609927633936" />
+    <state x="945" y="155" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1609957819022" />
     <state x="-746" y="237" key="FileChooserDialogImpl/0.0.1920.1040/-1920.-2.1920.1040@0.0.1920.1040" timestamp="1606657892976" />
-    <state width="1877" height="281" key="GridCell.Tab.0.bottom" timestamp="1609867034154">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1860" height="266" key="GridCell.Tab.0.bottom" timestamp="1609957574566">
+      <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="281" key="GridCell.Tab.0.bottom/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1609867034154" />
-    <state width="1899" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1609085948110" />
-    <state width="1877" height="281" key="GridCell.Tab.0.center" timestamp="1609867034154">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1860" height="279" key="GridCell.Tab.0.bottom/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1609931449119" />
+    <state width="1860" height="266" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1609957574566" />
+    <state width="1860" height="266" key="GridCell.Tab.0.center" timestamp="1609957574566">
+      <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="281" key="GridCell.Tab.0.center/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1609867034154" />
-    <state width="1899" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1609085948110" />
-    <state width="1877" height="281" key="GridCell.Tab.0.left" timestamp="1609867034154">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1860" height="279" key="GridCell.Tab.0.center/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1609931449118" />
+    <state width="1860" height="266" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1609957574566" />
+    <state width="1860" height="266" key="GridCell.Tab.0.left" timestamp="1609957574566">
+      <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="281" key="GridCell.Tab.0.left/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1609867034154" />
-    <state width="1899" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1609085948110" />
-    <state width="1877" height="281" key="GridCell.Tab.0.right" timestamp="1609867034154">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1860" height="279" key="GridCell.Tab.0.left/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1609931449118" />
+    <state width="1860" height="266" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1609957574566" />
+    <state width="1860" height="266" key="GridCell.Tab.0.right" timestamp="1609957574566">
+      <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="281" key="GridCell.Tab.0.right/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1609867034154" />
-    <state width="1899" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1609085948110" />
+    <state width="1860" height="279" key="GridCell.Tab.0.right/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1609931449118" />
+    <state width="1860" height="266" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1609957574566" />
     <state x="170" y="73" key="SettingsEditor" timestamp="1607888269503">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -231,8 +225,5 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/-1920.-2.1920.1040@0.0.1920.1040" timestamp="1606746873766" />
-  </component>
-  <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/views_py$manage.coverage" NAME="manage Coverage Results" MODIFIED="1609860823705" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

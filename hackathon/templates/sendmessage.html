@@ -1,0 +1,15 @@
+{% block content %}
+<h1> Testing message </h1>
+
+
+<form action="" method="post">
+
+        {% csrf_token %}
+    {% if form %}
+        {{form}}
+    <button class="btn" type="submit">שלח</button>
+    {% endif %}
+</form>
+
+
+{% endblock %}

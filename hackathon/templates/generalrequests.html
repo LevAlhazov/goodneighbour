@@ -103,7 +103,7 @@ Licence URI: http://www.os-templates.com/template-terms
   <tbody>
     <tr>
 
-        <td>לשליחת הודעה</td>
+        <td> <a href="{% url 'sendmessage' u_request.user.id %}">לשליחת הודעה </a> </td>
         <td>{{u_request.content}}</td>
         <td>{{u_request.title}}</td>
 

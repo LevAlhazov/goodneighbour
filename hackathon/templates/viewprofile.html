@@ -83,20 +83,21 @@ Licence URI: http://www.os-templates.com/template-terms
       {% block content %}
   <div>
 
-    {{user}}'s
+    {{u_request}}'s
     <div class="card" style="width: 18rem;">
   <div class="card-body">
     <h5 class="card-title">Profile page</h5>
-    <p class="card-text">{{user.id.profile_description.description}}</p>
+    <p class="card-text">{{u_request.user.id.profile_description.description}}</p>
   </div>
   <ul class="list-group list-group-flush">
-    <li class="list-group-item">First Name: {{user.profile_description.first_name}}</li>
-    <li class="list-group-item">Last Name:{{user.profile_description.last_name}} </li>
-    <li class="list-group-item">Email:{{user.email}}</li>
-    <li class="list-group-item">Location:{{user.profile_description.location}}</li>
+    <li class="list-group-item">First Name: {{u_request.user.profile_description.first_name}}</li>
+    <li class="list-group-item">Last Name:{{u_request.user.profile_description.last_name}} </li>
+    <li class="list-group-item">Email:{{u_request.user.email}}</li>
+    <li class="list-group-item">Location:{{u_request.user.profile_description.location}}</li>
   </ul>
   <div class="card-body">
-
+<td> <a href="{% url 'rateuser' u_request.user.id %}">דירוגים</a></td>
+    <td> <a href="{% url 'sendmessage' u_request.user.id %}">הודעות</a></td>
   </div>
 
     {% endblock content %}
