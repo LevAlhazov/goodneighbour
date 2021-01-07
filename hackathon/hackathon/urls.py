@@ -52,6 +52,7 @@ urlpatterns = [
     path('requests/<int:request_pk>', views.viewrequest, name='viewrequest'),
     path('requests/<int:request_pk>/completereq', views.completerequest, name='completerequest'),
     path('requests/<int:request_pk>/deletereq', views.deleterequest, name='deleterequest'),
+    path('requestbycategory/<int:cat_pk>/', views.requestbycategory, name='requestbycategory'),
 
 
     # display
@@ -76,6 +77,7 @@ urlpatterns = [
     path('mymessages/', views.mymessages, name='mymessages'),
     path('sentmessages/', views.sentmessages, name='sentmessages'),
     path('conversation/<int:user_pk>', views.conversation, name='conversation'),
+    path('adminusercontact/', views.adminusercontact, name='adminusercontact'),
 
 
     #rating and comments

@@ -26,7 +26,7 @@ class CreateUserForm(UserCreationForm):
 class CreateRequestForm(ModelForm):
     class Meta:
         model = request_card
-        fields = ['title', 'content', 'location']
+        fields = ['title', 'content', 'location', 'cat']
 
 
 class ContactForm(forms.Form):

@@ -10,6 +10,7 @@ from django.contrib.auth.models import Group
 from django.utils import timezone
 from django.http import HttpResponse, HttpResponseRedirect
 from django.core.mail import send_mail, BadHeaderError
+from django.core.paginator import Paginator
 from django.views.generic import DetailView
 from django.contrib.auth import get_user_model
 from django.contrib.auth.decorators import login_required
@@ -475,7 +476,7 @@ def myrating(request):
             count += 1
     if count != 0:
         rating_average = sum / count
-    your_rating= 0
+    your_rating = 0
     avg_list = {}
     for y in all_users:
         count = 0
@@ -484,7 +485,7 @@ def myrating(request):
             if y.id == z.user.id and current_user.id != y.id:
                 user_sum += z.rating
                 count += 1
-        if count!=0:
+        if count != 0:
             avg_list[y] = user_sum/count
     for x in avg_list.values():
         if x > rating_average:
@@ -520,6 +521,21 @@ def ratingforreceivers(request):
         sorted_dict[w] = avg_list[w]
     sorted_dict = sorted_dict.items()
     sorted_dict = tuple(sorted_dict)
-    print(sorted_keys)
 
     return render(request, 'ratingforreceivers.html', {'avg_list': sorted_dict , 'name_list': sorted_keys})
+
+
+def adminusercontact(request):
+    all_users = User.objects.all()
+    paginator = Paginator(all_users,6)
+    page = request.GET.get('page',1)
+    users = paginator.page(page)
+    return render(request, 'adminusercontact.html', {'all_users':all_users, 'users':users })
+
+def requestbycategory(request, cat_pk):
+    u_requests = request_card.objects.all()
+    cat_list = []
+    for x in u_requests:
+        if x.cat == cat_pk:
+            cat_list.append(x)
+    return render(request, 'requestbycategory.html', {'cat_list': cat_list })

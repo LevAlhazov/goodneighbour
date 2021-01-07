@@ -55,6 +55,7 @@ Licence URI: http://www.os-templates.com/template-terms
           {% endif %}
           {% if user.is_authenticated %}
           {% ifequal user.groups.all.0.name "Donators"%}
+          <li><a href="{% url 'myrating' %}">הדירוג שלי</a></li>
           <li><a href="{% url 'userprofile' %}">הפרופיל שלי</a></li>
           <li><a class="active" >אפשרויות</a>
             {% endifequal %}

@@ -32,6 +32,7 @@ class donation_card(models.Model):
 
 
 class request_card(models.Model):
+    category_tup = ((1,'מוצרי מזון'),(2,'מוצרי היגיינה'),(3,'ציוד משרדי'),(4,'הלבשה'),(5,'מוצרי תינוקות'))
     title = models.CharField(max_length=150)
     content = models.TextField(blank=True)
     created = models.DateTimeField(auto_now_add=True)
@@ -39,6 +40,7 @@ class request_card(models.Model):
     # Stores the relationship between a donation card and a user
     user = models.ForeignKey(User, null=True, on_delete=models.CASCADE)
     location = models.ForeignKey(location_model, null=True, on_delete=models.CASCADE)
+    cat = models.PositiveSmallIntegerField(choices=category_tup)
 
     def __str__(self):
         return self.title

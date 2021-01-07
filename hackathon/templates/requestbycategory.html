@@ -83,40 +83,33 @@ Licence URI: http://www.os-templates.com/template-terms
 
    {% block content %}
      <div class="btmspace-80 center">
-      <img src="{% static 'images/demo/bakashot.png' %}" alt="Responsive image">
+      <img src="{% static 'images/demo/tromot.png' %}" alt="Responsive image">
     </div>
     <div class="btmspace-80 right">
     <div class="row justify-content-center mt-5">
- <div class="card-body">
-    <h5 class="card-title">מיין על פי קטגוריה</h5>
-    <a href="{% url 'requestbycategory' '1' %}" class="btn btn-primary">מוצרי מזון</a>
-      <a href="{% url 'requestbycategory' '2' %}" class="btn btn-primary">מוצרי היגיינה</a>
-      <a href="{% url 'requestbycategory' '3' %}" class="btn btn-primary">ציוד משרדי</a>
-     <a href="{% url 'requestbycategory' '4' %}" class="btn btn-primary">הלבשה</a>
-     <a href="{% url 'requestbycategory' '5' %}" class="btn btn-primary">מוצרי תינוקות</a>
-  </div>
-        <br>
         <div class="col-md-10">
-        {% if u_requests %}
             <div class="list-group">
-                {% for u_request in u_requests %}
+              {% if cat_list %}
+                {% for x in cat_list %}
                 <table class="table">
   <thead>
     <tr>
 
       <th scope="col"></th>
-        <th scope="col">אזור</th>
+        <th scope="col">תורם</th>
         <th scope="col">תיאור</th>
         <th scope="col">כותרת</th>
+      <th scope="col">מיקום</th>
+
     </tr>
   </thead>
   <tbody>
     <tr>
-
-        <td> <a href="{% url 'sendmessage' u_request.user.id %}">לשליחת הודעה </a> </td>
-        <td> {{u_request.location}}</td>
-        <td>{{u_request.content}}</td>
-        <td>{{u_request.title}}</td>
+        <td>לשליחת הודעה</td>
+      <td>{{x.user}}</td>
+        <td>{{x.content}}</td>
+        <td>{{x.title}}</td>
+      <td>{{x.location}}</td>
 
     </tr>
     <tr>
@@ -127,12 +120,12 @@ Licence URI: http://www.os-templates.com/template-terms
               <br>
 
                 {% endfor %}
-            </div>
-        {% else %}
+              {% else %}
 
-        {% endif %}
-        </div>
-    </div>
+              The category is empty
+
+              {% endif %}
+            </div>
 </div>
   </main>
 </div>
