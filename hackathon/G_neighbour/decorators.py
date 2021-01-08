@@ -8,7 +8,7 @@ from django import template
 def unauthenticated_user(view_func):
     def wrapper_func(request, *args, **kwargs):
         if request.user.is_authenticated:
-            return redirect('home')
+            return redirect('index')
         else:
             return view_func(request, *args, **kwargs)
 
@@ -22,7 +22,7 @@ def allowed_user(allowed_roles=()):
             if request.user.groups.filter(name__in=allowed_roles).exists():
                 return view_func(request, *args, **kwargs)
             else:
-                return HttpResponse('You are not Authorized!')
+                return redirect('NotAutho')
 
         return wrapper_func
 

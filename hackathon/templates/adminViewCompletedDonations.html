@@ -10,12 +10,12 @@ Licence URI: http://www.os-templates.com/template-terms
 -->
 <html>
 <head>
-<title>GoodNeighbour | Pages | CompletedDonationCard</title>
+<title>GoodNeighbour | Pages | MyDonations</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <link href="{% static 'layout/styles/layout.css' %}" rel="stylesheet" type="text/css" media="all">
 </head>
-<body id="top">
+<main id="top">
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
@@ -26,35 +26,11 @@ Licence URI: http://www.os-templates.com/template-terms
     <header id="header" class="hoc clear">
       <!-- ################################################################################################ -->
       <div id="logo" class="fl_left">
-        <h1 style="color:gold"><a href="{% url 'index' %}">GoodNeighbour</a></h1>
+        <h1 style="color:gold"><a href="{% url 'index' %}">Good Neighbour</a></h1>
       </div>
       <nav id="mainav" class="fl_right">
         <ul class="clear">
-          <li><a href="{% url 'index' %}">Home</a></li>
-          <li class="active"><a class="drop" href="#">Pages</a>
-            <ul>
-              <li><a href="gallery.html">Gallery</a></li>
-              <li class="active"><a href="full-width.html">Full Width</a></li>
-              <li><a href="sidebar-left.html">Sidebar Left</a></li>
-              <li><a href="sidebar-right.html">Sidebar Right</a></li>
-              <li><a href="basic-grid.html">Basic Grid</a></li>
-            </ul>
-          </li>
-          <li><a class="drop" href="#">Dropdown</a>
-            <ul>
-              <li><a href="#">Level 2</a></li>
-              <li><a class="drop" href="#">Level 2 + Drop</a>
-                <ul>
-                  <li><a href="#">Level 3</a></li>
-                  <li><a href="#">Level 3</a></li>
-                  <li><a href="#">Level 3</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Level 2</a></li>
-            </ul>
-          </li>
-          <li><a href="#">Link Text</a></li>
-          <li><a href="#">Link Text</a></li>
+          <li><a href="{% url 'index' %}">עמוד הבית</a></li>
         </ul>
       </nav>
       <!-- ################################################################################################ -->
@@ -75,22 +51,24 @@ Licence URI: http://www.os-templates.com/template-terms
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
+</main>
 <div class="wrapper row3">
   <main class="hoc container clear">
-    <!-- main body -->
-    <!-- ################################################################################################ -->
-      <!-- ################################################################################################ -->
-
-     <div class="btmspace-80 center">
+      <div class="btmspace-80 center">
       <img src="{% static 'images/demo/oshlam.png' %}" alt="Responsive image">
     </div>
     <div class="btmspace-80 right">
     <div class="row justify-content-center mt-5">
         <div class="col-md-10">
+        </div>
+    </div>
         {% if u_donations %}
             <div class="list-group">
                 {% for u_donation in u_donations %}
-                    <a href="{% url 'viewcompleted' u_donation.id %}" class="list-group-item list-group-item-action"><b> {{u_donation.datecompleted}} -------- {{ u_donation.title }} </b> </a>
+                <h6>{{u_donation.user.username}}</h6>
+                    <a href="{% url 'viewcompleted' u_donation.id %}" class="list-group-item list-group-item-action"><b> {{ u_donation.title }}</b> </a>
+                <br>
+                {{u_donation.datecompleted}}
               <br>
                 {% endfor %}
             </div>
@@ -101,23 +79,24 @@ Licence URI: http://www.os-templates.com/template-terms
             </div>
         {% endif %}
         </div>
-    </div>
-</div>
   </main>
 </div>
+<div class="wrapper row5">
+  <div id="copyright" class="hoc clear">
+    <div class="one_third">
+      <ul class="nospace meta">
+        <li class="btmspace-15"><i class="fa fa-phone"></i> 050-1445566</li>
+        <li><i class="fa fa-envelope-o"></i> GoodNeighbour@help.com</li>
+      </ul>
+    </div>
+    <p class="fl_left">Copyright &copy; 2020 - All Rights Reserved - <a href="#">Good Neighbour</a></p>
+  </div>
+</div>
 
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
 <a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a>
 <!-- JAVASCRIPTS -->
 <script src="{% static 'layout/scripts/jquery.min.js' %}"></script>
 <script src="{% static 'layout/scripts/jquery.backtotop.js' %}"></script>
 <script src="{% static 'layout/scripts/jquery.mobilemenu.js' %}"></script>
-</body>
 </html>
-
-
-
-
 

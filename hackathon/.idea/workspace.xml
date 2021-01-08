@@ -23,18 +23,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eb8447e4-c555-4381-b69e-ce004fe8d2eb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/templates/adminusercontact.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/conversation.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/mymessages.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/myrating.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/rateuser.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/ratingforreceivers.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/requestbycategory.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/sendmessage.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/sentmessages.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/NotAuthorized.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/hackathon.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/hackathon.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/G_neighbour/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/G_neighbour/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/G_neighbour/decorators.py" beforeDir="false" afterPath="$PROJECT_DIR$/G_neighbour/decorators.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/G_neighbour/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/G_neighbour/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/G_neighbour/migrations/0001_initial.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/G_neighbour/migrations/0002_profile_description.py" beforeDir="false" />
@@ -42,18 +34,58 @@
       <change beforePath="$PROJECT_DIR$/G_neighbour/migrations/0004_auto_20210105_0905.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/G_neighbour/migrations/0005_profile_description_profile_pic.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/G_neighbour/migrations/0006_remove_profile_description_profile_pic.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/G_neighbour/migrations/0007_rating_page_user_comment_user_rating.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/G_neighbour/migrations/0008_user_rating_user.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/G_neighbour/migrations/0009_auto_20210106_1310.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/G_neighbour/migrations/0010_auto_20210106_1424.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/G_neighbour/migrations/0011_private_message.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/G_neighbour/migrations/0012_private_message_title.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/G_neighbour/migrations/0013_auto_20210106_1709.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/G_neighbour/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/G_neighbour/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/G_neighbour/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/G_neighbour/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/demo/עריכת חלון חירום.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/demo/troma.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/demo/troma.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hackathon/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/hackathon/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hackathon/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/hackathon/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images/demo/troma.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/images/demo/troma.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images/demo/tromot.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/static/images/demo/עריכת חלון חירום.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/adminViewCompletedDonations.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/adminViewCompletedDonations.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/adminusercontact.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/adminusercontact.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/ban.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ban.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/completeddonations.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/completeddonations.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/completedrequests.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/completedrequests.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/contact.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/conversation.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/conversation.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/createdonationcard.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/createdonationcard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/createrequest.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/createrequest.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/createuserprofile.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/createuserprofile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/donations.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/donations.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/edituserprofile.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/edituserprofile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/email.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/email.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/emergencypage.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/emergencypage.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/generaldonations.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/generaldonations.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/generalrequests.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/generalrequests.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/informationpage.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/informationpage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/mymessages.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/mymessages.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/myrating.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/myrating.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/publicprofile.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/rateuser.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/rateuser.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/ratingforreceivers.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ratingforreceivers.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/report.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/report.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/requestbycategory.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/requestbycategory.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/requests.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/requests.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/sendmessage.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sendmessage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/sentmessages.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sentmessages.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/splitbylocation.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/splitbylocation.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/userdata.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/userdata.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/userprofile.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/userprofile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/viewcompleted.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/viewcompleted.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/viewcompletedrequests.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/viewcompletedrequests.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/viewdonation.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/viewdonation.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/viewprofile.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/viewprofile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/viewrequest.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/viewrequest.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,19 +106,19 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/djangoProject/password" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\lev_a\Documents\GitHub\goodneighbour\hackathon\templates" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\lev_a\Documents\GitHub\goodneighbour\hackathon\hackathon" />
       <recent name="C:\Users\lev_a\Documents\GitHub\goodneighbour\hackathon\G_neighbour" />
       <recent name="C:\Users\lev_a\Documents\GitHub\goodneighbour\hackathon\G_neighbour\migrations" />
       <recent name="C:\Users\lev_a\Desktop\siteproject\hackathon\static" />
       <recent name="C:\Users\lev_a\Desktop\siteproject\hackathon\G_neighbour\templates\G_neighbour" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\lev_a\Documents\GitHub\goodneighbour\hackathon\templates" />
     </key>
   </component>
   <component name="RunManager" selected="Python.manage">
@@ -138,7 +170,6 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="JavaScript Debug.index.html" />
       <item itemvalue="Python.manage" />
       <item itemvalue="Python.urls" />
     </list>
@@ -229,17 +260,19 @@
     </state>
     <state width="1877" height="278" key="GridCell.Tab.0.right/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1610031535342" />
     <state width="1860" height="266" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1609957574566" />
-    <state x="170" y="73" key="SettingsEditor" timestamp="1607888269503">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="213" y="92" key="SettingsEditor" timestamp="1610042049377">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="165" key="SettingsEditor/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1607852208198" />
     <state x="170" y="73" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1607888269503" />
+    <state x="213" y="92" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1610042049377" />
+    <state x="184" y="145" width="1630" height="712" key="dock-window-1" timestamp="1610053797388">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="184" y="145" width="1630" height="712" key="dock-window-1/0.0.1920.1040@0.0.1920.1040" timestamp="1610053797388" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1606746873766">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/-1920.-2.1920.1040@0.0.1920.1040" timestamp="1606746873766" />
-  </component>
-  <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/views_py$manage.coverage" NAME="manage Coverage Results" MODIFIED="1610030599300" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

@@ -26,35 +26,11 @@ Licence URI: http://www.os-templates.com/template-terms
     <header id="header" class="hoc clear">
       <!-- ################################################################################################ -->
       <div id="logo" class="fl_left">
-        <h1 style="color:gold"><a href="{% url 'index' %}">GoodNeighbour</a></h1>
+        <h1 style="color:gold"><a href="{% url 'index' %}">Good Neighbour</a></h1>
       </div>
       <nav id="mainav" class="fl_right">
         <ul class="clear">
-          <li><a href="{% url 'index' %}">Home</a></li>
-          <li class="active"><a class="drop" href="#">Pages</a>
-            <ul>
-              <li><a href="gallery.html">Gallery</a></li>
-              <li class="active"><a href="full-width.html">Full Width</a></li>
-              <li><a href="sidebar-left.html">Sidebar Left</a></li>
-              <li><a href="sidebar-right.html">Sidebar Right</a></li>
-              <li><a href="basic-grid.html">Basic Grid</a></li>
-            </ul>
-          </li>
-          <li><a class="drop" href="#">Dropdown</a>
-            <ul>
-              <li><a href="#">Level 2</a></li>
-              <li><a class="drop" href="#">Level 2 + Drop</a>
-                <ul>
-                  <li><a href="#">Level 3</a></li>
-                  <li><a href="#">Level 3</a></li>
-                  <li><a href="#">Level 3</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Level 2</a></li>
-            </ul>
-          </li>
-          <li><a href="#">Link Text</a></li>
-          <li><a href="#">Link Text</a></li>
+          <li><a href="{% url 'index' %}">עמוד הבית</a></li>
         </ul>
       </nav>
       <!-- ################################################################################################ -->
@@ -90,8 +66,12 @@ Licence URI: http://www.os-templates.com/template-terms
         {% if u_donations %}
             <div class="list-group">
                 {% for u_donation in u_donations %}
-                    <a href="{% url 'viewcompleted' u_donation.id %}" class="list-group-item list-group-item-action"><b> {{u_donation.datecompleted}} -------- {{ u_donation.title }} </b> </a>
+                    <a href="{% url 'viewcompleted' u_donation.id %}" class="list-group-item list-group-item-action"><b> {{ u_donation.title }} </b> </a>
               <br>
+                {{u_donation.datecompleted}}
+                <br>
+                <br>
+
                 {% endfor %}
             </div>
         {% else %}
@@ -106,6 +86,17 @@ Licence URI: http://www.os-templates.com/template-terms
   </main>
 </div>
 
+<div class="wrapper row5">
+  <div id="copyright" class="hoc clear">
+    <div class="one_third">
+      <ul class="nospace meta">
+        <li class="btmspace-15"><i class="fa fa-phone"></i> 050-1445566</li>
+        <li><i class="fa fa-envelope-o"></i> GoodNeighbour@help.com</li>
+      </ul>
+    </div>
+    <p class="fl_left">Copyright &copy; 2020 - All Rights Reserved - <a href="#">Good Neighbour</a></p>
+  </div>
+</div>
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->

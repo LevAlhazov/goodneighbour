@@ -30,31 +30,7 @@ Licence URI: http://www.os-templates.com/template-terms
       </div>
       <nav id="mainav" class="fl_right">
         <ul class="clear">
-          <li><a href="{% url 'index' %}">Home</a></li>
-          <li class="active"><a class="drop" href="#">Pages</a>
-            <ul>
-              <li><a href="gallery.html">Gallery</a></li>
-              <li class="active"><a href="full-width.html">Full Width</a></li>
-              <li><a href="sidebar-left.html">Sidebar Left</a></li>
-              <li><a href="sidebar-right.html">Sidebar Right</a></li>
-              <li><a href="basic-grid.html">Basic Grid</a></li>
-            </ul>
-          </li>
-          <li><a class="drop" href="#">Dropdown</a>
-            <ul>
-              <li><a href="#">Level 2</a></li>
-              <li><a class="drop" href="#">Level 2 + Drop</a>
-                <ul>
-                  <li><a href="#">Level 3</a></li>
-                  <li><a href="#">Level 3</a></li>
-                  <li><a href="#">Level 3</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Level 2</a></li>
-            </ul>
-          </li>
-          <li><a href="#">Link Text</a></li>
-          <li><a href="#">Link Text</a></li>
+          <li><a href="{% url 'index' %}">עמוד הבית</a></li>
         </ul>
       </nav>
       <!-- ################################################################################################ -->
@@ -83,7 +59,7 @@ Licence URI: http://www.os-templates.com/template-terms
 
    {% block content %}
      <div class="btmspace-80 center">
-      <img src="{% static 'images/demo/tromot.png' %}" alt="Responsive image">
+      <img src="{% static 'images/demo/bakashot.png' %}" alt="Responsive image">
     </div>
     <div class="btmspace-80 right">
     <div class="row justify-content-center mt-5">
@@ -96,7 +72,6 @@ Licence URI: http://www.os-templates.com/template-terms
     <tr>
 
       <th scope="col"></th>
-        <th scope="col">תורם</th>
         <th scope="col">תיאור</th>
         <th scope="col">כותרת</th>
       <th scope="col">מיקום</th>
@@ -105,8 +80,7 @@ Licence URI: http://www.os-templates.com/template-terms
   </thead>
   <tbody>
     <tr>
-        <td>לשליחת הודעה</td>
-      <td>{{x.user}}</td>
+        <td> <a href="{% url 'sendmessage' x.user.id %}">לשליחת הודעה </a> </td>
         <td>{{x.content}}</td>
         <td>{{x.title}}</td>
       <td>{{x.location}}</td>
@@ -122,7 +96,7 @@ Licence URI: http://www.os-templates.com/template-terms
                 {% endfor %}
               {% else %}
 
-              The category is empty
+              <h1>.קטגוריה זו היינה ריקה</h1>
 
               {% endif %}
             </div>
@@ -136,6 +110,18 @@ Licence URI: http://www.os-templates.com/template-terms
 
 
 {% endblock content %}
+
+<div class="wrapper row5">
+  <div id="copyright" class="hoc clear">
+    <div class="one_third">
+      <ul class="nospace meta">
+        <li class="btmspace-15"><i class="fa fa-phone"></i> 050-1445566</li>
+        <li><i class="fa fa-envelope-o"></i> GoodNeighbour@help.com</li>
+      </ul>
+    </div>
+    <p class="fl_left">Copyright &copy; 2020 - All Rights Reserved - <a href="#">Good Neighbour</a></p>
+  </div>
+</div>
 
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->

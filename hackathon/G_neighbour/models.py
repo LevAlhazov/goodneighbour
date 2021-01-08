@@ -40,7 +40,7 @@ class request_card(models.Model):
     # Stores the relationship between a donation card and a user
     user = models.ForeignKey(User, null=True, on_delete=models.CASCADE)
     location = models.ForeignKey(location_model, null=True, on_delete=models.CASCADE)
-    cat = models.PositiveSmallIntegerField(choices=category_tup)
+    category = models.PositiveSmallIntegerField(choices=category_tup)
 
     def __str__(self):
         return self.title

@@ -39,8 +39,6 @@ Licence URI: http://www.os-templates.com/template-terms
       <nav id="mainav" class="fl_right">
         <ul class="clear">
           <li class=""><a href="{% url 'index' %}">עמוד הבית</a></li>
-          <li class=""><a href="{% url 'mymessages' %}">ההודעות שלי</a></li>
-          <li class=""><a href="{% url 'sentmessages' %}">ההודעות ששלחתי</a></li>
           {% if request.user.is_superuser %}
           <li class=""><a href="{% url 'admin:index' %}">אפשרויות מנהל</a></li>
           <li><a class="active" >דוחות מנהל</a>
@@ -54,50 +52,37 @@ Licence URI: http://www.os-templates.com/template-terms
           </li>
           {% endif %}
           {% if user.is_authenticated %}
-          {% ifequal user.groups.all.0.name "Donators"%}
-          <li><a href="{% url 'myrating' %}">הדירוג שלי</a></li>
+          <li><a class="active" >שיחות</a>
+            <ul>
+              <li class=""><a href="{% url 'mymessages' %}">ההודעות שלי</a></li>
+              <li class=""><a href="{% url 'sentmessages' %}">ההודעות ששלחתי</a></li>
+               {% if request.user.is_superuser %}
+              <li class=""><a href="{% url 'adminusercontact' %}">הודעת מנהל</a></li>
+              {% endif %}
+            </ul>
+          </li>
+          {% if not request.user.is_superuser %}
+          {% ifequal user.groups.all.0.name "Donators" %}
           <li><a href="{% url 'userprofile' %}">הפרופיל שלי</a></li>
-          <li><a class="active" >אפשרויות</a>
             {% endifequal %}
+          <li><a class="active" >אפשרויות</a>
+            {% endif %}
             {% endif %}
 <!--             remember to add else -->
             <ul>
+              {% ifequal user.groups.all.0.name "Donators" %}
               <li><a href="donations/">כרטיסי התרומה שלי</a></li>
               <li><a href="create/">פתח כרטיס</a></li>
               <li><a href="{% url 'completeddonations' %}">כרטיסים שהושלמו</a></li>
-            </ul>
-          </li>
-
-              {% if user.is_authenticated %}
-          {% ifequal user.groups.all.0.name "Receiver"%}
-          <li><a href="{% url 'ratingforreceivers' %}">דירוג התורמים באתר</a></li>
-          <li><a class="active" >אפשרויות</a>
-            {% endifequal %}
-            {% endif %}
-<!--             remember to add else -->
-            <ul>
+              {% endifequal %}
+              {% ifequal user.groups.all.0.name "Receiver"%}
               <li><a href="requests/">הבקשות שלי</a></li>
               <li><a href="createrequest/">צור בקשה</a></li>
               <li><a href="{% url 'completedrequests' %}">תרומות שקיבלתי</a></li>
-              <li><a href="{% static 'pages/sidebar-right.html' %}">Sidebar Right</a></li>
-              <li><a href="{% static 'pages/basic-grid.html' %}">Basic Grid</a></li>
+              <li><a href="{% url 'ratingforreceivers' %}">תורמים מדורגים</a></li>
+              {% endifequal %}
             </ul>
           </li>
-
-
-<!--          <li><a class="drop" href="#">Dropdown</a>-->
-<!--            <ul>-->
-<!--              <li><a href="#">Level 2</a></li>-->
-<!--              <li><a class="drop" href="#">Level 2 + Drop</a>-->
-<!--                <ul>-->
-<!--                  <li><a href="#">Level 3</a></li>-->
-<!--                  <li><a href="#">Level 3</a></li>-->
-<!--                  <li><a href="#">Level 3</a></li>-->
-<!--                </ul>-->
-<!--              </li>-->
-<!--              <li><a href="#">Level 2</a></li>-->
-<!--            </ul>-->
-<!--          </li>-->
           {% if user.is_authenticated %}
             <li><a href="{% url 'logoutuser' %}" >התנתקות</a></li>
           {% else %}
@@ -117,7 +102,6 @@ Licence URI: http://www.os-templates.com/template-terms
     <div class="flexslider basicslider">
       <ul class="slides">
         <li>
-
           <article>
             <p>תרומות</p>
             <h3 class="heading">לרשימת התרומות באתר</h3>
@@ -130,14 +114,6 @@ Licence URI: http://www.os-templates.com/template-terms
             <p>מידע</p>
             <h3 class="heading">דף מידע בנוגע לאתר </h3>
             <footer><a class="btn" href="{% url 'informationpage' %}">המשך למידע</a></footer>
-          </article>
-        </li>
-        <li>
-          <article>
-            <p>רישמי</p>
-            <h3 class="heading">גורמי תרומה ועזרה רשמיים</h3>
-            <p>ריכוז דרכי יצירת קשר למקורות רשמיים אשר מתעסקים בתמיכה נפשית ומתן תרומה</p>
-            <footer><a class="btn" href="{% url 'emergencypage' %}">מעבר לעמוד</a></footer>
           </article>
         </li>
         <li>
@@ -187,10 +163,10 @@ Licence URI: http://www.os-templates.com/template-terms
       <li class="one_third">
         <article class="bgded overlay" style="background-image:url('{% static 'images/demo/button_back.png' %}');">
           <div class="txtwrap"><i class="block fa fa-4x fa-chrome"></i>
-            <h6 class="heading">Facilisis</h6>
-            <p>Nec velit mauris molestie dui et dignissim vestibulum diam tortor cursus&hellip;</p>
+            <h6 class="heading">רישמי</h6>
+            <p>גורמי תרומה ועזרה רשמיים - ריכוז דרכי יצירת קשר למקורות רשמיים&hellip;</p>
           </div>
-          <footer><a href="#">More &raquo;</a></footer>
+          <footer><a href="{% url 'emergencypage' %}">מעבר לעמוד &raquo;</a></footer>
         </article>
       </li>
     </ul>

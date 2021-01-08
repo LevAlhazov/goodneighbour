@@ -31,7 +31,6 @@ urlpatterns = [
     path('signup/', views.signupuser, name='signupuser'),
     path('logout/', views.logoutuser, name='logoutuser'),
     path('login/', views.loginuser, name='loginuser'),
-    # path('home/', views.home, name='home'),
     path('banned/', views.ban, name='ban'),
     path('create/', views.createdonationcard, name='createdonationcard'),
 
@@ -59,10 +58,11 @@ urlpatterns = [
     path('generaldonations/', views.generaldonations, name='generaldonations'),
     path('generalrequests/', views.generalrequests, name='generalrequests'),
     path('splitbylocation/<str:cat_pk>/', views.splitbylocation, name='splitbylocation'),
+    path('NotAutho/', views.NotAutho, name='NotAutho'),
 
     # information and contact
     path('contact/', views.contactView, name='contact'),
-    path('success/', views.successView, name='success'),
+    path('success/', views.index, name='success'),
     path('report/', views.reportView, name='report'),
     path('informationpage/', views.informationpage, name='informationpage'),
     path('emergencypage/', views.emergencypage, name='emergencypage'),
